@@ -5,12 +5,22 @@ public class User {
     private String email;
     private String nickname;
     private int age;
+    private String password;
 
-    public User(String name, String email, String nickname, int age) {
+    public User(String name, String email, String nickname, int age, String password) {
         this.name = name;
         this.email = email;
         this.nickname = nickname;
         this.age = age;
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
