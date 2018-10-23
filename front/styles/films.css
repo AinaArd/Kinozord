@@ -1,0 +1,25 @@
+.mainBlock{
+	color: white;
+	margin: auto;
+  width: 1000px;
+  overflow: hidden;
+  margin-bottom: 100px;
+  background-color: #333333;
+font-family: 'Bai Jamjuree', sans-serif;
+}
+.filmsBlock{
+	background-color: #666666;
+	float: left;
+	margin-left: 50px;
+	margin-right: 0px;
+	margin-top: 40px;
+	margin-bottom: 10px; 
+}
+.film_cell{
+	float: left;
+	margin: 35px;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 140px;
+	height: 140px;
+}
