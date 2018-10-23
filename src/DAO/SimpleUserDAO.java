@@ -17,6 +17,11 @@ public class SimpleUserDAO implements UserDAO {
         return null;
     }
 
+    public void registerNewUser(String name, String login, String password) {
+        new User(name, login, password);
+    }
+
+
     /*@Override
     public User getUserById(int id) {
         List<User> users = DataBase.getUsers();

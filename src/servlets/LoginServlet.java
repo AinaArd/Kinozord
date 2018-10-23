@@ -2,11 +2,17 @@ package servlets;
 
 import data.DataBase;
 import entities.User;
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import freemarker.template.TemplateException;
+import helper.Helper;
 import services.UserService;
 
+import javax.jms.Session;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,11 +32,7 @@ public class LoginServlet extends HttpServlet {
                     remembered.setMaxAge(24 * 60 * 60);
                     response.addCookie(remembered);
                 }
-                Pattern patternName = Pattern.compile("^[a-zA-Z][a-zA-Z0-9-_.]{1,20}$");
-                Matcher m1 = patternName.matcher(name);
-                Pattern patternPass = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).*$");
-                Matcher m = patternPass.matcher(pass);
-                if (m.matches() && m1.matches()) {
+                if (Helper.validation(name, pass)) {
                     session.setAttribute("current_user", name);
                     session.setAttribute("current_pass", pass);
                     response.sendRedirect("/profile");
@@ -55,54 +57,57 @@ public class LoginServlet extends HttpServlet {
     }
 
     private boolean userExist(String name, String pass) {
-        for(User user : DataBase.getUsers())
-        if (user.getName().equals(name) && user.getPassword().equals(pass)) {
-            return true;
-        }
+        for (User user : DataBase.getUsers())
+            if (user.getName().equals(name) && user.getPassword().equals(pass)) {
+                return true;
+            }
         return false;
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        Cookie[] cookies = request.getCookies();
         HttpSession session = request.getSession();
         if (userService.getCurrentUser(request) != null) {
             response.sendRedirect("/profile");
-        } else {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals(request.getParameter("login"))) {
-                    session.setAttribute("current_user", request.getParameter("login"));
-                    response.sendRedirect("/profile");
-                }
+        } else if (!Helper.remembered(request, response, session)) {
+            Configuration cfg = ConfigSingleton.getConfig(getServletContext());
+            Template tmpl = cfg.getTemplate("LogIn.html");
+            HashMap<String, Object> root = new HashMap<>();
+            root.put("form_url", request.getRequestURI());
+            try {
+                tmpl.process(root, response.getWriter());
+            } catch (TemplateException e) {
+                e.printStackTrace();
+/*
+                response.getWriter().print("<html lang=\"en\" >\n" +
+                        "\n" +
+                        "<head>\n" +
+                        "  <meta charset=\"UTF-8\">\n" +
+                        "  <title>Login Form</title>\n" +
+                        "  <link rel=\"stylesheet\" type=\"text/css\" href=\"styles/AuthStyle.css\">\n" +
+                        "     \n" +
+                        "    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js\"></script>\n" +
+                        "\n" +
+                        "</head>\n" +
+                        "\n" +
+                        "<body>\n" +
+                        "\n" +
+                        "  <div class=\"login\">\n" +
+                        "\t<h1>Login</h1>\n" +
+                        "    <form method=\"post\">\n" +
+                        "    \t<input type=\"text\" name=\"u\" placeholder=\"Username\" required=\"required\" />\n" +
+                        "        <input type=\"password\" name=\"p\" placeholder=\"Password\" required=\"required\" />\n" +
+                        "        <button type=\"submit\" class=\"btn btn-primary btn-block btn-large\">Let me in.</button>\n" +
+                        "    </form>\n" +
+                        "</div>\n" +
+                        "  \n" +
+                        "  \n" +
+                        "\n" +
+                        "</body>\n" +
+                        "\n" +
+                        "</html>\n");*/
             }
-            response.getWriter().print("<html lang=\"en\" >\n" +
-                    "\n" +
-                    "<head>\n" +
-                    "  <meta charset=\"UTF-8\">\n" +
-                    "  <title>Login Form</title>\n" +
-                    "  <link rel=\"stylesheet\" type=\"text/css\" href=\"styles/AuthStyle.css\">\n" +
-                    "     \n" +
-                    "    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js\"></script>\n" +
-                    "\n" +
-                    "</head>\n" +
-                    "\n" +
-                    "<body>\n" +
-                    "\n" +
-                    "  <div class=\"login\">\n" +
-                    "\t<h1>Login</h1>\n" +
-                    "    <form method=\"post\">\n" +
-                    "    \t<input type=\"text\" name=\"u\" placeholder=\"Username\" required=\"required\" />\n" +
-                    "        <input type=\"password\" name=\"p\" placeholder=\"Password\" required=\"required\" />\n" +
-                    "        <button type=\"submit\" class=\"btn btn-primary btn-block btn-large\">Let me in.</button>\n" +
-                    "    </form>\n" +
-                    "</div>\n" +
-                    "  \n" +
-                    "  \n" +
-                    "\n" +
-                    "</body>\n" +
-                    "\n" +
-                    "</html>\n");
-        }
 
+        }
     }
 }

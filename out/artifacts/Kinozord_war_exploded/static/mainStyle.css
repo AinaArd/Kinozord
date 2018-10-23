@@ -1,0 +1,72 @@
+.mainBlock {
+    margin: auto;
+    width: 1000px;
+    overflow: hidden;
+    background-color: #333333;
+    font-family: 'Bai Jamjuree', sans-serif;
+    height: 300px;
+}
+
+.mainTable {
+    font-size: 27px;
+    width: 100%;
+    height: 100%;
+}
+
+td a {
+}
+
+td {
+    border-spacing: 0px;
+    margin: 0px;
+    color: white;
+    text-align: center;
+}
+
+td:hover {
+    background: none;
+    background-color: red;
+}
+
+tr:hover {
+}
+
+td#films:hover {
+    background: url("Auth.png") no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+}
+
+td#afisha:hover {
+    background: url("fonLog2.jpg") no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+}
+
+td#adsearch:hover {
+    background: url("fonLog3.jpg") no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+}
+
+td#ratings:hover {
+    background: url("fonLog4.jpg") no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+}
+
+td#profile:hover {
+    background: url("fonLog5.jpg") no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+}

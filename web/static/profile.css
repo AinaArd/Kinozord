@@ -1,0 +1,54 @@
+.mainBlock{
+	margin: auto;
+  width: 1000px;
+  overflow: hidden;
+  background-color: #333333;
+font-family: 'Bai Jamjuree', sans-serif;
+}
+.left {
+	margin: 5px;
+	width: 360px;
+	float: left;
+}
+body{
+	color: white;
+}
+.right {
+	padding: 20px;
+	margin: 15px;
+	margin-top: 0px;
+	float: right;
+	background-color: #cc0033;
+	width: 560px;
+}
+table {
+	border-spacing: 10px;
+}
+tr {
+	background-color: #cc0033;
+	height: 200px;
+}
+td{
+	text-align: left;
+	vertical-align: top;
+	width: 350px;
+}
+li{
+	list-style-type: none;
+}
+li#list {
+	margin: 5px;
+}
+.profile {
+	margin-left: 20px;
+	float: left;
+	width: 170px;
+}
+.profile2 {
+	text-align: left;
+	float: left;
+	width: 90px;
+}
+.text {
+	width: 500px;
+}

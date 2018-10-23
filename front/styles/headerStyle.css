@@ -1,0 +1,119 @@
+/* Navbar container */
+.navbar {
+  height: 80px;
+  margin: auto;
+  width: 1000px;
+  overflow: hidden;
+  background-color: #333333;
+font-family: 'Bai Jamjuree', sans-serif;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  height: 80px;
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  height: 100%;
+  font-size: 24px; 
+  width: 200px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #cc0033;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+    width: 168px;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+form.example {
+  width: 70%;
+  height: 80px;
+  float: left;
+  margin-left: 5%;
+  text-align: left;
+}
+form.example input[type=text] {
+  vertical-align: middle;
+  padding: 5px;
+  font-size: 15px;
+  width: 80%;
+  height: 30px;
+  margin-top: 20px;
+  border: 1px solid grey;
+  float: left;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.example button {
+  margin-left: 5%; 
+  float: left;
+  height: 80px;
+  background: #333333;
+  color: white;
+  width: 12%;
+  font-size: 17px;
+  border: 0px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #cc0033;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}

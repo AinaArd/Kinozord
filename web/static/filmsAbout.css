@@ -1,0 +1,19 @@
+
+.filmsBlock {
+    background-color: #333333;
+    color: white;
+    margin: auto;
+    width: 1000px;
+    overflow: hidden;
+    font-family: 'Bai Jamjuree', sans-serif;
+    padding-bottom: 100px;
+}
+
+.film_cell {
+    float: left;
+    margin: 35px;
+    margin-left: 150px;
+    margin-right: 20px;
+    width: 300px;
+    height: 100px;
+}
