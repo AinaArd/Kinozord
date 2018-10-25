@@ -2,16 +2,14 @@ package entities;
 
 public class User {
     private String name;
-    private String email;
+    private String login;
     private String nickname;
     private int age;
     private String password;
 
-    public User(String name, String email, String nickname, int age, String password) {
+    public User(String name, String login, String password) {
         this.name = name;
-        this.email = email;
-        this.nickname = nickname;
-        this.age = age;
+        this.login = login;
         this.password = password;
     }
 
@@ -31,12 +29,12 @@ public class User {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLogin() {
+        return login;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getNickname() {
@@ -54,4 +52,5 @@ public class User {
     public void setAge(int age) {
         this.age = age;
     }
+
 }

@@ -20,8 +20,8 @@ public class DataBase {
             ResultSet rs = st.executeQuery();
             rs.next();
             while (rs.next()) {
-                users.add(new User(rs.getString("name"), rs.getString("email"),
-                        rs.getString("nickname"), Integer.parseInt(rs.getString("age")), rs.getString("password")));
+                users.add(new User(rs.getString("name"), rs.getString("login"),
+                        rs.getString("nickname")));
             }
         } catch (SQLException e) {
             e.printStackTrace();

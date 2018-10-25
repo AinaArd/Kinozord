@@ -2,9 +2,9 @@ package entities;
 
 public class Post {
     private String text;
-    private User userPublisher;
+    private String userPublisher;
 
-    public Post(String text, User userPublisher) {
+    public Post(String text, String userPublisher) {
         this.text = text;
         this.userPublisher = userPublisher;
     }
@@ -17,11 +17,11 @@ public class Post {
         this.text = text;
     }
 
-    public User getUserPublisher() {
+    public String getUserPublisher() {
         return userPublisher;
     }
 
-    public void setUserPublisher(User userPublisher) {
+    public void setUserPublisher(String userPublisher) {
         this.userPublisher = userPublisher;
     }
 }
