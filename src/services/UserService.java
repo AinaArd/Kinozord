@@ -1,15 +1,16 @@
 package services;
+
 import DAO.SimpleUserDAO;
-import DAO.UserDAO;
 import entities.User;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.*;
 
-import DAO.UserDAO;
+import helper.Helper;
 
 public class UserService {
-    private UserDAO userDAO = new SimpleUserDAO();
+    private SimpleUserDAO userDAO = new SimpleUserDAO();
 
     public User getCurrentUser(HttpServletRequest request) {
         HttpSession session = request.getSession();
@@ -21,11 +22,7 @@ public class UserService {
         String userLogin = request.getParameter("login");
         String userPass = request.getParameter("password");
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/post\",\n" +
-                    "                    \"postgres\",\n" +
-                    "                    \"postgres\"");
-            PreparedStatement st = conn.prepareStatement("select * from 'user' where name =" + userLogin + ", password = " + userPass);
+            PreparedStatement st = Helper.getConnection().prepareStatement("select * from 'user' where name =" + userLogin + ", password = " + userPass);
             ResultSet rs = st.executeQuery();
             rs.next();
             if (!rs.next()) {
@@ -33,7 +30,7 @@ public class UserService {
             } else {
                 return userDAO.getUserByName(userLogin);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
@@ -56,5 +53,20 @@ public class UserService {
     public void authorize(User current_user, HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.setAttribute("current_user", current_user);
+    }
+
+    public void registerNewUser(String name, String login, String password) {
+        password = Helper.encripting(password);
+        userDAO.registerNewUser(name, login, password);
+    }
+
+    public void updateUser(String oldLogin, String newName, String newLogin, String newPassword) {
+        try {
+            PreparedStatement st = Helper.getConnection().prepareStatement("update user set name=" + newName + "login=" + newLogin +
+                    "password=" + Helper.encripting(newPassword) +
+                    "where login=" + oldLogin);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

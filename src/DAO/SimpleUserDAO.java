@@ -2,7 +2,10 @@ package DAO;
 
 import data.DataBase;
 import entities.User;
+import helper.Helper;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 public class SimpleUserDAO implements UserDAO {
@@ -16,6 +19,11 @@ public class SimpleUserDAO implements UserDAO {
         }
         return null;
     }
+
+    public void registerNewUser(String name, String login, String password) {
+        new User(name, login, password);
+    }
+
 
     /*@Override
     public User getUserById(int id) {
