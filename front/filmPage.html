@@ -6,9 +6,21 @@
     <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree" rel="stylesheet">
 </head>
 <body>
+<div onclick="show('none')" id="gray"></div>
+<div id="window">
+    <div class="form">
+        <form method="post">
+            <label for="user">Send to</label><br>
+            <input required id="user" type="text" name="login" placeholder="Login"/><br>
+            <label for="comment">Comment</label><br>
+            <textarea id="comment" type="text" name="text" placeholder="Awesome Film Bro"></textarea>
+            <button type="submit" class="btn btn-primary btn-block btn-large">RECOMMEND</button>
+        </form>
+    </div>
+</div>
 <div class="mainBlock">
 
-	<div class="iRec"><img src="styles/src/icon.jpg" height="200px" width="200px"><br><button id="Rec">Reccomend</button></div>
+	<div class="iRec"><img src="styles/src/icon.jpg" height="200px" width="200px"><br><button onclick="show('block');" id="Rec">Recommend</button></div>
     <div class="FInfo"><h3>FilmName</h3>
     <table>
         <tr>
@@ -56,5 +68,13 @@
         <p style="margin-top: 375px"><h5>Description</h5>text    text     text    text    text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text  text     text
         </p></div>
 </div>
+<script>
+    //Функция показа
+    function show(state)
+    {
+        document.getElementById('window').style.display = state;
+        document.getElementById('gray').style.display = state;
+    }
+</script>
 </body>
 </html>
