@@ -2,6 +2,7 @@
 <html>
 <head>
     <title></title>
+   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="styles/filmPage.css">
     <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree" rel="stylesheet">
 </head>
@@ -12,8 +13,8 @@
         <form method="post">
             <label for="user">Send to</label><br>
             <input required id="user" type="text" name="login" placeholder="Login"/><br>
-            <label for="comment">Comment</label><br>
-            <textarea id="comment" type="text" name="text" placeholder="Awesome Film Bro"></textarea>
+            <label for="comment">Comment     <b id="t">0</b><b>/200</b></label><br>
+            <textarea id="comment" maxlength="200" oninput="func(this)" type="text" name="text" placeholder="Awesome Film Bro"></textarea>
             <button type="submit" class="btn btn-primary btn-block btn-large">RECOMMEND</button>
         </form>
     </div>
@@ -76,5 +77,10 @@
         document.getElementById('gray').style.display = state;
     }
 </script>
+<script> 
+var func = function (el) { 
+document.getElementById("t").textContent = el.value.length; 
+} 
+</script> 
 </body>
 </html>
