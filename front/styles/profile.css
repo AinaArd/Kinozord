@@ -13,6 +13,21 @@ font-family: 'Bai Jamjuree', sans-serif;
 body{
 	color: white;
 }
+button#Rec {
+    margin-top: 4px;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 16px;
+    float: right;
+    height: 25px;
+    width: 100px;
+    background-color: white;
+    border: 0px;
+    color: black;
+}
+button#Rec:hover {
+	color: white;
+    background-color: #333333;
+}
 .right {
 	padding: 20px;
 	margin: 15px;

@@ -1,21 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sign in Form</title>
-  <link rel="stylesheet" type="text/css" href="styles/AuthStyle.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Sign in Form</title>
+    <link rel="stylesheet" type="text/css" href="styles/AuthStyle.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
-  <div class="login">
-	<h1>Registration</h1>
-    <form method="post">
-    	<input type="text" name="name" placeholder="Name" required="required" />
-      <input type="text" name="login" placeholder="Login" required="required" />
-      <input type="password" name="password" placeholder="Password" required="required" />
-      <input type="password" name="pcheck" placeholder="Repeat password" required="required" />
-      <button type="submit" class="btn btn-primary btn-block btn-large">Let me in</button>
+<div class="login">
+    <h1>Registration</h1>
+    <form method="post" onsubmit="return validate_form();">
+        <input type="text" name="name" placeholder="Name" required="required"/>
+        <input type="text" id="login" name="login" placeholder="Login" required="required"/>
+        <input type="password" id="password" name="password" placeholder="Password" required="required"/>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Let me in</button>
     </form>
 </div>
+<script type="text/javascript">
+    var validate_form = function () {
+        var l = document.getElementById("login");
+        var p = document.getElementById("password");
+        var re = /^(?=.*[A-Za-z0-9]$)[A-Za-z][A-Za-z\d.-]{2,19}$/;
+        if (!re.test(l.value)) {
+            alert("wrong login");
+        }
+        ;
+        var re2 = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/;
+        if (!re2.test(p.value)) {
+            alert("wrong password");
+        }
+        ;
+        return re.test(l.value) && re2.test(p.value);
+    }
+</script>
 </body>
 </html>

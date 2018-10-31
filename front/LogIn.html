@@ -14,13 +14,30 @@
 
   <div class="login">
 	<h1>Login</h1>
-    <form method="post">
-    	<input type="text" name="u" placeholder="Username" required="required" />
-        <input type="password" name="p" placeholder="Password" required="required" />
+    <form method="post" onsubmit="return validate_form();">
+    	<input id="login" type="text" name="u" placeholder="Username" required="required" />
+        <input id="password" type="password" name="p" placeholder="Password" required="required" />
         <center style="color: white;">Remember me<input class="c" type="checkbox" name="c"/></center>
         <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
     </form>
 </div>
+  <script type="text/javascript">
+      var validate_form = function () {
+          var l = document.getElementById("login");
+          var p = document.getElementById("password");
+          var re = /^(?=.*[A-Za-z0-9]$)[A-Za-z][A-Za-z\d.-]{2,19}$/;
+          if (!re.test(l.value)) {
+              alert("wrong login");
+          }
+          ;
+          var re2 = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/;
+          if (!re2.test(p.value)) {
+              alert("wrong password");
+          }
+          ;
+          return re.test(l.value) && re2.test(p.value);
+      }
+  </script>
 </body>
 
 </html>

@@ -27,7 +27,11 @@
 	vertical-align: middle;
 	text-align: left;"><div class="profile">
 					<img src="src/icon.jpg" height="130px" width="130px">
-				</div><div class="profile2">LOGIN<br>REAL NAME<br><button onclick="show('block')">EDIT</button></div></td>
+				</div><div class="profile2">LOGIN<br>REAL NAME<br><br><button id="Rec" onclick="show('block')">EDIT</button>
+					<!--если не свой профиль то вместо edit вот эта кнопка, если уже добавлен то status=delete(или просто не показывать кнопку) else add-->
+					<br><button id="Rec" onclick="/actionuser?login=${thisuser}">${status}</button>
+				</div></td>
+
 			</tr>
 			<tr>
 				<td>friends
