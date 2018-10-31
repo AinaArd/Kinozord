@@ -30,7 +30,7 @@
               alert("wrong login");
           }
           ;
-          var re2 = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/;
+          var re2 = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}/;
           if (!re2.test(p.value)) {
               alert("wrong password");
           }
