@@ -9,10 +9,11 @@
 <body>
 <div class="login">
     <h1>Registration</h1>
-    <form method="post" onsubmit="return validate_form();">
+    <form method="post" enctype="multipart/form-data" onsubmit="return validate_form();">
         <input type="text" name="name" placeholder="Name" required="required"/>
         <input type="text" id="login" name="login" placeholder="Login" required="required"/>
         <input type="password" id="password" name="password" placeholder="Password" required="required"/>
+        <input type="file" name="file" id="file" accept="image/jpeg, image/png, image/jpg">
         <button type="submit" class="btn btn-primary btn-block btn-large">Let me in</button>
     </form>
 </div>
