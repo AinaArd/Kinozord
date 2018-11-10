@@ -99,4 +99,21 @@ public class CategoryDAO {
         }
         return null;
     }
+
+    public static List<Subscription> getNamesOfSubscribers(User user) {
+        try{
+            PreparedStatement ps = Helper.getConnection().prepareStatement("select subscription.id, u.name " +
+                    "from subscription inner join \"user\" u on subscription.user_subscriber = u.id where user_target=?");
+            ps.setLong(1,user.getId());
+            ResultSet rs = ps.executeQuery();
+            List<Subscription> subscribers = new ArrayList<>();
+            while(rs.next()) {
+                subscribers.add(new Subscription(rs.getLong("id"),rs.getString("name")));
+            }
+            return subscribers;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

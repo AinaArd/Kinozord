@@ -7,6 +7,7 @@
 
 </head>
 <body>
+<#include "header.ftl">
 <div onclick="show('none')" id="gray"></div>
 <div id="window">
     <div class="form">
@@ -40,15 +41,15 @@
             <tr>
                 <td>friends
                     <ul>
+                        <#if subscribers ??>
+                            <#if subscribers? has_content>
+                                <#list subscribers as item>
                         <li id="list">
-                            <img src="src/icon.jpg" height="40px" width="40px"> FRIEND
+                            <img src="src/icon.jpg" height="40px" width="40px">${item.getUserSubscriber()}
                         </li>
-                        <li id="list">
-                            <img src="src/icon.jpg" height="40px" width="40px"> FRIEND
-                        </li>
-                        <li id="list">
-                            <img src="src/icon.jpg" height="40px" width="40px"> FRIEND
-                        </li>
+                                </#list>
+                            </#if>
+                        </#if>
                     </ul>
                 </td>
             </tr>

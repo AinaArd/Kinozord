@@ -7,16 +7,10 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import helper.Helper;
-import services.PostService;
+import services.CategoryService;
 
-import javax.jms.Session;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.Array;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -49,17 +43,21 @@ public class ProfileServlet extends javax.servlet.http.HttpServlet {
             List<Post> posts = PostsDAO.getUserPosts(loggedUser);
             root.put("posts", posts);
 
-            List<Liked> likeds = CategoryDAO.getNamesOfLiked(loggedUser);
+            List<Liked> likeds = CategoryService.getLikedFilms(loggedUser);
             root.put("liked", likeds);
 
-            List<Neutral> neutrals = CategoryDAO.getNamesOfNeutral(loggedUser);
+            List<Neutral> neutrals = CategoryService.getNeutralFilms(loggedUser);
             root.put("neutral", neutrals);
 
-            List<Disliked> dislikeds = CategoryDAO.getNamesOfDisliked(loggedUser);
+            List<Disliked> dislikeds = CategoryService.getDislikedFilms(loggedUser);
             root.put("disliked", dislikeds);
 
-            List<WatchLater> watchLaters = CategoryDAO.getNamesOfWatchLater(loggedUser);
+            List<WatchLater> watchLaters = CategoryService.getWatchLaterFilms(loggedUser);
             root.put("later", watchLaters);
+
+            List<Subscription> subscribers = CategoryService.getSubscribers(loggedUser);
+            System.out.println(Arrays.asList(subscribers));
+            root.put("subscribers", subscribers);
 
             try {
                 tmpl.process(root, response.getWriter());

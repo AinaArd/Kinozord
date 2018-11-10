@@ -1,10 +1,6 @@
 package helper;
 
-import entities.Disliked;
 import entities.Liked;
-import entities.Neutral;
-import entities.Post;
-import services.LikedService;
 import services.PostService;
 import services.UserService;
 
@@ -19,8 +15,6 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Helper {
     private static Connection conn = null;

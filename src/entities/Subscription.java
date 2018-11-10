@@ -1,27 +1,41 @@
 package entities;
 
 public class Subscription {
-    private User userTarget;
-    private User userSubscriber;
+    private long id;
+    private String userTarget;
+    private String userSubscriber;
 
-    public Subscription(User userTarget, User userSubscriber) {
+    public Subscription(long id, String userTarget, String userSubscriber) {
+        this(id,userSubscriber);
         this.userTarget = userTarget;
+    }
+
+    public Subscription(long id, String userSubscriber) {
+        this.id = id;
         this.userSubscriber = userSubscriber;
     }
 
-    public User getUserTarget() {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getUserTarget() {
         return userTarget;
     }
 
-    public void setUserTarget(User userTarget) {
+    public void setUserTarget(String userTarget) {
         this.userTarget = userTarget;
     }
 
-    public User getUserSubscriber() {
+    public String getUserSubscriber() {
         return userSubscriber;
     }
 
-    public void setUserSubscriber(User userSubscriber) {
+    public void setUserSubscriber(String userSubscriber) {
         this.userSubscriber = userSubscriber;
     }
 }
