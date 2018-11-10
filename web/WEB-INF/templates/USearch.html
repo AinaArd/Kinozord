@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/usearch.css">
+<link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree" rel="stylesheet">
+</head>
+<body>
+<div class="mainBlock">
+	<input id="q" class="search" type="text" oninput="search()" name="search" placeholder="USERNAME">
+	<span id="res2"></span>
+</div>
+<script type="application/javascript">
+    var search = function () {
+        var paras = document.getElementsByClassName('user_cell');
+        while (paras[0]) {
+            paras[0].parentNode.removeChild(paras[0]);
+        }
+        ajax2();
+    };
+    var ajax2 = function () {
+        $.ajax({
+            'url': '/searchserv',
+            type: 'post',
+            dataType: 'json',
+            'data': {
+                'q': $("#q").val()
+            },
+            success: function (obj) {
+                for (var i = 0; i < obj.res.length; i++) {
+                    var n = obj.res[i];
+                    var div = document.createElement("p");
+                    div.innerHTML =
+                          "<div class=\'user_cell\'><a href=\'/profile?login=" + n.log + "\'><img src=\'/static/"+n.path+"\' width='125px' height='125px'><br>" + n.nam + "</a></div>";
+                 	res2.appendChild(div);
+                }
+            },
+            failure: function (obj) {
+                alert(2);
+            }
+        });
+    }
+</script>
+</body>
+</html>

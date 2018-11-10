@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataBase {
-    public static List<User> getUsers() {
+    /*public static List<User> getUsers() {
         ArrayList<User> users = new ArrayList<>();
         try {
             Class.forName("org.postgresql.Driver");
@@ -29,7 +29,7 @@ public class DataBase {
             e.printStackTrace();
         }
         return users;
-    }
+    }*/
 
 }
 

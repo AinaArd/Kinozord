@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../../static/mainStyle.css">
+    <link rel="stylesheet" type="text/css" href="/static/mainStyle.css">
     <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree" rel="stylesheet">
     <title></title>
 </head>

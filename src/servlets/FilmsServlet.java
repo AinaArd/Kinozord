@@ -39,7 +39,6 @@ public class FilmsServlet extends HttpServlet {
             root.put("form_url", request.getRequestURI());
             ArrayList<Film> films = new ArrayList<>();
 
-
             while (rs.next()) {
                 films.add(new Film(rs.getString("description"), rs.getString("name")));
             }

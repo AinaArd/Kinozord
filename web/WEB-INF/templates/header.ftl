@@ -16,10 +16,10 @@
         </button>
         <div class="dropdown-content">
             <a href="#">Afisha</a>
-            <a href="#">Films</a>
-            <a href="#">Ratings</a>
-            <a href="#">Advanced search</a>
-            <a href="#">profile/log in</a>
+            <a href="/films">Films</a>
+            <a href="#">Subscription</a>
+            <a href="/search">Search</a>
+            <a href="/profile">Profile/Log in</a>
         </div>
     </div>
     <form class="example" method="post" action="#">

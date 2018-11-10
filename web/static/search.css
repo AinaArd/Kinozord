@@ -1,0 +1,109 @@
+.mainBlock{
+    margin: auto;
+    width: 1000px;
+    overflow: hidden;
+    background-color: #333333;
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+.left {
+    margin: 5px;
+    margin-left: 20px;
+    width: 300px;
+    float: left;
+}
+body{
+
+    color: white;
+}
+.right {
+    padding: 20px;
+    margin: 15px;
+    margin-top: 0px;
+    float: right;
+    background-color: #cc0033;
+    width: 560px;
+}
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px; /* demo only */
+}
+
+.custom-dropdown select {
+    background-color: #cc0033;
+    color: #fff;
+    font-size: inherit;
+    padding: .5em;
+    padding-right: 2.5em;
+    border: 0;
+    margin: 0;
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -webkit-appearance: button; /* hide default arrow in chrome OSX */
+}
+.Rec {
+    font-family: 'Bai Jamjuree', sans-serif;
+
+    margin-top: 20px;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 22px;
+    float: left;
+    height: 50px;
+    width: 220px;
+    background-color: #cc0033;
+    border: 0px;
+    color: white;
+}
+.Rec:hover {
+    background-color: #ff0033;
+}
+a {
+    color: white;
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+}
+
+.custom-dropdown select[disabled] {
+    color: rgba(0,0,0,.3);
+}
+
+.custom-dropdown select[disabled]::after {
+    color: rgba(0,0,0,.1);
+}
+
+.custom-dropdown::before {
+    background-color: rgba(0,0,0,.15);
+}
+
+.custom-dropdown::after {
+    color: rgba(0,0,0,.4);
+}
+.film_cell{
+    float: left;
+    margin: 35px;
+    margin-left: 50px;
+    margin-right: 20px;
+    width: 200px;
+    height: 100px;
+}
+.search {
+    width: 200px;
+    height: 20px;
+    margin-bottom: 10px;
+    background: #cc0033;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 4px;
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+    -webkit-transition: box-shadow .5s ease;
+    -moz-transition: box-shadow .5s ease;
+    -o-transition: box-shadow .5s ease;
+    -ms-transition: box-shadow .5s ease;
+    transition: box-shadow .5s ease;
+
+}

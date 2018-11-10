@@ -1,0 +1,60 @@
+.mainBlock{
+    margin: auto;
+    width: 1000px;
+    overflow: hidden;
+    background-color: #333333;
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+.iRec {
+    float: left;
+    margin: 50px;
+}
+.FInfo {
+    margin-top: 15px;
+    color: white;
+    float: left;
+}
+.FInfo td {
+    padding-right: 16px;
+}
+.FInfo h3{
+    font-size: 30px;
+}
+.Rate {
+    float: right;
+    color: white;
+    margin-top: 50px;
+}
+.type {
+    width: 150px;
+    height: 30px;
+    margin: 2px;
+}
+form{
+    background-color: #cc0033;
+    padding: 16px;
+}
+.text {
+    width: 900px;
+    color: white;
+    font-size: 20px;
+    margin: 25px;
+}
+
+button#Rec {
+    margin-top: 20px;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 22px;
+    float: right;
+    height: 50px;
+    width: 200px;
+    background-color: #cc0033;
+    border: 0px;
+    color: white;
+}
+button#Rec:hover {
+    background-color: #ff0033;
+}
+tr {
+    width: 150px;
+}

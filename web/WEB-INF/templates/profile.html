@@ -2,12 +2,23 @@
 <html>
 <head>
 	<title>profile</title>
-	<link rel="stylesheet" type="text/css" href="../../static/profile.css">
+	<link rel="stylesheet" type="text/css" href="/static/profile.css">
 	<link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree" rel="stylesheet">
 
 </head>
 <body>
-
+<div onclick="show('none')" id="gray"></div>
+<div id="window">
+	<div class="form">
+		<form method="post">
+			<input type="text" name="name" placeholder="Name"/>
+			<input type="text" name="login" placeholder="Login"/>
+			<input type="password" name="password" placeholder="Password"/>
+			<input type="password" name="pcheck" placeholder="Repeat password"/>
+			<button type="submit" class="btn btn-primary btn-block btn-large">EDIT</button>
+		</form>
+	</div>
+</div>
 <div class="mainBlock">
 	<div class="left">
 		<table>
@@ -15,20 +26,24 @@
 				<td style="
 	vertical-align: middle;
 	text-align: left;"><div class="profile">
-					<img src="../../static/icon.jpg" height="130px" width="130px">
-				</div><div class="profile2">LOGIN<br>REAL NAME</div></td>
+					<img src="src/icon.jpg" height="130px" width="130px">
+				</div><div class="profile2">LOGIN<br>REAL NAME<br><br><button id="Rec" onclick="show('block')">EDIT</button>
+					<!--если не свой профиль то вместо edit вот эта кнопка, если уже добавлен то status=delete(или просто не показывать кнопку) else add-->
+					<br><button id="Rec" onclick="/actionuser?login=${thisuser}">${status}</button>
+				</div></td>
+
 			</tr>
 			<tr>
 				<td>friends
 					<ul>
 						<li id="list">
-							<img src="../../static/icon.jpg" height="40px" width="40px"> FRIEND
+							<img src="src/icon.jpg" height="40px" width="40px"> FRIEND
 						</li>
 						<li id="list">
-							<img src="../../static/icon.jpg" height="40px" width="40px"> FRIEND
+							<img src="src/icon.jpg" height="40px" width="40px"> FRIEND
 						</li>
 						<li id="list">
-							<img src="../../static/icon.jpg" height="40px" width="40px"> FRIEND
+							<img src="src/icon.jpg" height="40px" width="40px"> FRIEND
 						</li>
 					</ul>
 				</td>
@@ -95,12 +110,12 @@
 			</tr>
 		</table>
 	</div>
-		<ul>
-				<div class="right">
+	<ul>
+		<div class="right">
 			<li>
 				<div class="post">
-					<img style="float: left;" src="../../static/icon.jpg" height="40px" width="40px">
-				<p style="
+					<img style="float: left;" src="src/icon.jpg" height="40px" width="40px">
+					<p style="
 				margin-left: 20px;
 				float: left;">LOGIN</p> <p style="
 				margin-right: 60px;float: right;">DATE</p></div>
@@ -108,20 +123,20 @@
 				<br>
 				<br>
 				<div class="text">Free vector icons - SVG, PSD, PNG, EPS & Icon Font - Thousands of ...
-https://www.flaticon.com/
-Перевести эту страницу
-1157500+ Free vector icons in SVG, PSD, PNG, EPS format or as ICON FONT. Thousands of free icons in the largest database of free vector icons!
-‎Vector icon packs · ‎Login · ‎Teamwork · ‎Packs
-User - Icons8
-https://icons8.ru/icon/3225/пользователь
-Пользователь icon. It is the drawing ... Идентифицированный пользователь-мужчина icon ... Thus, it only makes sense for you to choose your user icon well.</div>
+					https://www.flaticon.com/
+					Перевести эту страницу
+					1157500+ Free vector icons in SVG, PSD, PNG, EPS format or as ICON FONT. Thousands of free icons in the largest database of free vector icons!
+					‎Vector icon packs · ‎Login · ‎Teamwork · ‎Packs
+					User - Icons8
+					https://icons8.ru/icon/3225/пользователь
+					Пользователь icon. It is the drawing ... Идентифицированный пользователь-мужчина icon ... Thus, it only makes sense for you to choose your user icon well.</div>
 			</li>
 		</div>
 		<div class="right">
 			<li>
 				<div class="post">
-					<img style="float: left;" src="../../static/icon.jpg" height="40px" width="40px">
-				<p style="
+					<img style="float: left;" src="src/icon.jpg" height="40px" width="40px">
+					<p style="
 				margin-left: 20px;
 				float: left;">LOGIN</p> <p style="
 				margin-right: 60px;float: right;">DATE</p></div>
@@ -129,16 +144,25 @@ https://icons8.ru/icon/3225/пользователь
 				<br>
 				<br>
 				<div class="text">Free vector icons - SVG, PSD, PNG, EPS & Icon Font - Thousands of ...
-https://www.flaticon.com/
-Перевести эту страницу
-1157500+ Free vector icons in SVG, PSD, PNG, EPS format or as ICON FONT. Thousands of free icons in the largest database of free vector icons!
-‎Vector icon packs · ‎Login · ‎Teamwork · ‎Packs
-User - Icons8
-https://icons8.ru/icon/3225/пользователь
-Пользователь icon. It is the drawing ... Идентифицированный пользователь-мужчина icon ... Thus, it only makes sense for you to choose your user icon well.</div>
+					https://www.flaticon.com/
+					Перевести эту страницу
+					1157500+ Free vector icons in SVG, PSD, PNG, EPS format or as ICON FONT. Thousands of free icons in the largest database of free vector icons!
+					‎Vector icon packs · ‎Login · ‎Teamwork · ‎Packs
+					User - Icons8
+					https://icons8.ru/icon/3225/пользователь
+					Пользователь icon. It is the drawing ... Идентифицированный пользователь-мужчина icon ... Thus, it only makes sense for you to choose your user icon well.</div>
 			</li>
 		</div>
-		</ul>
-	</div>
+	</ul>
+</div>
+
+<script>
+    //Функция показа
+    function show(state)
+    {
+        document.getElementById('window').style.display = state;
+        document.getElementById('gray').style.display = state;
+    }
+</script>
 </body>
 </html>
