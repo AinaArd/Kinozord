@@ -33,9 +33,6 @@ public class RegistrationServlet extends HttpServlet {
             String password = request.getParameter("password");
 
             userService.registerNewUser(name, login, password);
-//            currentUser.setName(name);
-//            currentUser.setLogin(login);
-//            currentUser.setPassword(password);
             session.setAttribute("current_user", currentUser);
             response.sendRedirect("/login");
 

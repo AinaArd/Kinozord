@@ -31,6 +31,7 @@ public class LoginServlet extends HttpServlet {
         } else {
             String login = request.getParameter("login");
             String pass = request.getParameter("password");
+            pass = Helper.encripting(pass);
 
             if (request.getParameter("Remember") != null) {
                 Cookie remembered = new Cookie(login, pass);
@@ -45,14 +46,6 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("/login");
         }
 
-
-   /* private boolean userExist(String name, String pass) {
-        for (User user : DataBase.getUsers())
-            if (user.getName().equals(name) && user.getPassword().equals(pass)) {
-                return true;
-            }
-        return false;
-    }*/
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws

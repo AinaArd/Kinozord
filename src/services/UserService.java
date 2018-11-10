@@ -21,7 +21,6 @@ public class UserService {
 
     public User authenticate(String login, String pass) {
         User u = userDAO.getUserByLogin(login);
-
         if (u != null) {
             if (userDAO.checkPass(u, pass)) {
                 return u;
@@ -47,26 +46,26 @@ public class UserService {
 */
 
 
-        public void authorize (User current_user, HttpServletRequest request){
-            HttpSession session = request.getSession();
-            session.setAttribute("current_user", current_user);
-        }
+    public void authorize(User current_user, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.setAttribute("current_user", current_user);
+    }
 
-        public void registerNewUser (String name, String login, String password){
-//        password = Helper.encripting(password);
-            userDAO.registerNewUser(name, login, password);
-        }
+    public void registerNewUser(String name, String login, String password) {
+        password = Helper.encripting(password);
+        userDAO.registerNewUser(name, login, password);
+    }
 
-        public void updateUser (String oldLogin, String newName, String newLogin, String newPassword){
-            try {
-                PreparedStatement st = Helper.getConnection().prepareStatement("update user set name=" + newName + "login=" + newLogin +
-                        "password=" + Helper.encripting(newPassword) +
-                        "where login=" + oldLogin);
-                st.setString(1, newName);
-                st.setString(2, newLogin);
-                st.setString(3, newPassword);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+    public void updateUser(String oldLogin, String newName, String newLogin, String newPassword) {
+        try {
+            PreparedStatement st = Helper.getConnection().prepareStatement("update user set name=" + newName + "login=" + newLogin +
+                    "password=" + Helper.encripting(newPassword) +
+                    "where login=" + oldLogin);
+            st.setString(1, newName);
+            st.setString(2, newLogin);
+            st.setString(3, newPassword);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
+}
