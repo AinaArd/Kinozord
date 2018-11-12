@@ -26,7 +26,8 @@ public class ProfileServlet extends javax.servlet.http.HttpServlet {
         String newLogin = request.getParameter("newLogin");
         String newPassword = request.getParameter("newPassword");
         User newUser = SimpleUserDAO.updateUserInDB(current_user, newName, newLogin, newPassword);
-        session.setAttribute("user",newUser);
+        session.setAttribute("сurrent_user", newUser);
+
 
         response.sendRedirect("/profile");
     }
@@ -42,8 +43,6 @@ public class ProfileServlet extends javax.servlet.http.HttpServlet {
             Template tmpl = cfg.getTemplate("profile.ftl");
             HashMap<String, Object> root = new HashMap<>();
             root.put("user", loggedUser);
-
-            System.out.println(loggedUser.getPicturePath());
 
             List<Post> posts = PostsDAO.getUserPosts(loggedUser);
             root.put("posts", posts);

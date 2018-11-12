@@ -1,14 +1,6 @@
 
 package data;
 
-import DAO.SimpleUserDAO;
-import DAO.UserDAO;
-import entities.*;
-
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-
 public class DataBase {
     /*public static List<User> getUsers() {
         ArrayList<User> users = new ArrayList<>();

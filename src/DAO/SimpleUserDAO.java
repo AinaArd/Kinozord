@@ -1,21 +1,15 @@
 package DAO;
 
-import data.DataBase;
-import entities.Post;
 import entities.User;
 import helper.Helper;
 
-import javax.xml.transform.Result;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-public class SimpleUserDAO implements UserDAO {
+public class SimpleUserDAO {
 
-    @Override
-    public User getUserByLogin(String login) {
+    public static User getUserByLogin(String login) {
         try {
             PreparedStatement pr = Helper.getConnection().prepareStatement("select * from \"user\" where login=? ");
             pr.setString(1, login);
@@ -24,12 +18,6 @@ public class SimpleUserDAO implements UserDAO {
             if (!rs.next()) {
                 return null;
             } else {
-             /*   User user = new User();
-                user.setId(rs.getLong("id"));
-                user.setLogin(rs.getString("login"));
-                user.setPassword(rs.getString("password"));
-                user.setName(rs.getString("name"));
-                return user;*/
                 return new User(rs.getLong("id"), rs.getString("login"), rs.getString("password"),
                         rs.getString("name"), rs.getString("picture"));
             }
@@ -61,16 +49,14 @@ public class SimpleUserDAO implements UserDAO {
 
     public static User updateUserInDB(User user, String newName, String newLogin, String newPassword) {
         try {
-            PreparedStatement st = Helper.getConnection().prepareStatement("update \"user\" set name=?" +
-                    "login=?" + "password=?" + /*Helper.encripting(newPassword)*/  "where login=?");
+//            newPassword = Helper.encripting(newPassword);
+            PreparedStatement st = Helper.getConnection().prepareStatement("update \"user\" set name=?, login=?, password=? where login=?");
             st.setString(1, newName);
             st.setString(2, newLogin);
             st.setString(3, newPassword);
             st.setString(4, user.getLogin());
-            user.setName(newName);
-            user.setLogin(newLogin);
-            user.setPassword(newPassword);
-            return user;
+            System.out.println(getUserByLogin(newLogin));
+            return getUserByLogin(newLogin);
         } catch (SQLException e) {
             e.printStackTrace();
         }

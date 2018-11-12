@@ -32,7 +32,7 @@ public class RegistrationServlet extends HttpServlet {
 
 //            if (Helper.validation(name, login, password)) {
 
-                String path = "C:\\Programming\\Kinozord\\web\\avatars\\";
+                String path = "C:\\Programming\\Kinozord\\web\\avatars";
                 Part filePart = request.getPart("file");
                 String fileName = Helper.getFileName(filePart);
 
@@ -63,9 +63,9 @@ public class RegistrationServlet extends HttpServlet {
                     }
                 }
 
-                userService.registerNewUser(name, login, password, path + fileName);
+                userService.registerNewUser(name, login, password, "../avatars/" + fileName);
                 session.setAttribute("current_user", currentUser);
-                response.sendRedirect("/login");
+//                response.sendRedirect("/login");
             }
         }
 //    }
