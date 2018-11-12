@@ -12,9 +12,9 @@
 <div id="window">
     <div class="form">
         <form method="post">
-            <input type="text" name="name" placeholder="Name"/>
-            <input type="text" name="login" placeholder="Login"/>
-            <input type="password" name="password" placeholder="Password"/>
+            <input type="text" name="newName" placeholder="Name"/>
+            <input type="text" name="newLogin" placeholder="Login"/>
+            <input type="password" name="newPassword" placeholder="Password"/>
             <input type="password" name="pcheck" placeholder="Repeat password"/>
             <button type="submit" class="btn btn-primary btn-block btn-large">EDIT</button>
         </form>
@@ -28,7 +28,7 @@
 	vertical-align: middle;
 	text-align: left;">
                     <div class="profile">
-                        <img src="src/icon.jpg" height="130px" width="130px">
+                        <img src="${user.getPicturePath()}" height="130px" width="130px" >
                     </div>
                     <div class="profile2">${user.getLogin()}<br>${user.getName()}<br><br>
                         <button id="Rec" onclick="show('block')">EDIT</button>

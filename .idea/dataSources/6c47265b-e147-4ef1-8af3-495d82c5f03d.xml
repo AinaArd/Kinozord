@@ -81,8 +81,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2018-11-09.14:17:28.830</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1084</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-11-12.20:22:49.551</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1113</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -208,7 +208,7 @@
     <table id="37" parent="17" name="film">
       <ObjectId>57661</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>891</StateNumber>
+      <StateNumber>1099</StateNumber>
     </table>
     <table id="38" parent="17" name="liked">
       <ObjectId>57746</ObjectId>
@@ -233,7 +233,7 @@
     <table id="42" parent="17" name="user">
       <ObjectId>57701</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>970</StateNumber>
+      <StateNumber>1113</StateNumber>
     </table>
     <table id="43" parent="17" name="watch_later">
       <ObjectId>57800</ObjectId>
@@ -393,18 +393,36 @@
       <StateNumber>882</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="66" parent="37" name="film_pkey">
+    <column id="66" parent="37" name="year">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1097</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="67" parent="37" name="country">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>1098</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="68" parent="37" name="rate">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1099</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="69" parent="37" name="film_pkey">
       <ObjectId>57668</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="67" parent="37" name="film_pkey">
+    <key id="70" parent="37" name="film_pkey">
       <ObjectId>57669</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>film_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="68" parent="38" name="id">
+    <column id="71" parent="38" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -413,36 +431,36 @@
       <TypeId>23</TypeId>
       <SequenceName>liked_id_seq</SequenceName>
     </column>
-    <column id="69" parent="38" name="user_who_liked">
+    <column id="72" parent="38" name="user_who_liked">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>888</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="70" parent="38" name="liked_film">
+    <column id="73" parent="38" name="liked_film">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>888</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="71" parent="38" name="rate">
+    <column id="74" parent="38" name="rate">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>1084</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="72" parent="38" name="liked_pkey">
+    <index id="75" parent="38" name="liked_pkey">
       <ObjectId>57750</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="73" parent="38" name="liked_pkey">
+    <key id="76" parent="38" name="liked_pkey">
       <ObjectId>57751</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>liked_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="74" parent="38" name="liked_user_who_liked_fkey">
+    <foreign-key id="77" parent="38" name="liked_user_who_liked_fkey">
       <ObjectId>57752</ObjectId>
       <ColNames>user_who_liked</ColNames>
       <RefTableId>57701</RefTableId>
@@ -451,7 +469,7 @@
       <RefKeyName>user_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="75" parent="38" name="liked_liked_film_fkey">
+    <foreign-key id="78" parent="38" name="liked_liked_film_fkey">
       <ObjectId>57757</ObjectId>
       <ColNames>liked_film</ColNames>
       <RefTableId>57661</RefTableId>
@@ -460,7 +478,7 @@
       <RefKeyName>film_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="76" parent="39" name="id">
+    <column id="79" parent="39" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -469,30 +487,30 @@
       <TypeId>23</TypeId>
       <SequenceName>neutral_id_seq</SequenceName>
     </column>
-    <column id="77" parent="39" name="user_neutral">
+    <column id="80" parent="39" name="user_neutral">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>890</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="78" parent="39" name="neutral_film">
+    <column id="81" parent="39" name="neutral_film">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>890</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="79" parent="39" name="neutral_pkey">
+    <index id="82" parent="39" name="neutral_pkey">
       <ObjectId>57786</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="80" parent="39" name="neutral_pkey">
+    <key id="83" parent="39" name="neutral_pkey">
       <ObjectId>57787</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>neutral_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="81" parent="39" name="neutral_user_neutral_fkey">
+    <foreign-key id="84" parent="39" name="neutral_user_neutral_fkey">
       <ObjectId>57788</ObjectId>
       <ColNames>user_neutral</ColNames>
       <RefTableId>57701</RefTableId>
@@ -501,7 +519,7 @@
       <RefKeyName>user_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="82" parent="39" name="neutral_neutral_film_fkey">
+    <foreign-key id="85" parent="39" name="neutral_neutral_film_fkey">
       <ObjectId>57793</ObjectId>
       <ColNames>neutral_film</ColNames>
       <RefTableId>57661</RefTableId>
@@ -510,7 +528,7 @@
       <RefKeyName>film_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="83" parent="40" name="id">
+    <column id="86" parent="40" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -519,36 +537,36 @@
       <TypeId>23</TypeId>
       <SequenceName>post_id_seq</SequenceName>
     </column>
-    <column id="84" parent="40" name="context">
+    <column id="87" parent="40" name="context">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <StateNumber>886</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="85" parent="40" name="user_publisher">
+    <column id="88" parent="40" name="user_publisher">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>886</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="86" parent="40" name="date">
+    <column id="89" parent="40" name="date">
       <Position>5</Position>
       <DataType>date|0s</DataType>
       <StateNumber>1068</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <index id="87" parent="40" name="post_pkey">
+    <index id="90" parent="40" name="post_pkey">
       <ObjectId>57719</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="88" parent="40" name="post_pkey">
+    <key id="91" parent="40" name="post_pkey">
       <ObjectId>57720</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>post_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="89" parent="40" name="post_user_publisher_fkey">
+    <foreign-key id="92" parent="40" name="post_user_publisher_fkey">
       <ObjectId>57721</ObjectId>
       <ColNames>user_publisher</ColNames>
       <RefTableId>57701</RefTableId>
@@ -557,7 +575,7 @@
       <RefKeyName>user_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="90" parent="41" name="id">
+    <column id="93" parent="41" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -566,30 +584,30 @@
       <TypeId>23</TypeId>
       <SequenceName>subscription_id_seq</SequenceName>
     </column>
-    <column id="91" parent="41" name="user_target">
+    <column id="94" parent="41" name="user_target">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>887</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="92" parent="41" name="user_subscriber">
+    <column id="95" parent="41" name="user_subscriber">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>887</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="93" parent="41" name="subscription_pkey">
+    <index id="96" parent="41" name="subscription_pkey">
       <ObjectId>57732</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="94" parent="41" name="subscription_pkey">
+    <key id="97" parent="41" name="subscription_pkey">
       <ObjectId>57733</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>subscription_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="95" parent="41" name="subscription_user_target_fkey">
+    <foreign-key id="98" parent="41" name="subscription_user_target_fkey">
       <ObjectId>57734</ObjectId>
       <ColNames>user_target</ColNames>
       <RefTableId>57701</RefTableId>
@@ -598,7 +616,7 @@
       <RefKeyName>user_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="96" parent="41" name="subscription_user_subscriber_fkey">
+    <foreign-key id="99" parent="41" name="subscription_user_subscriber_fkey">
       <ObjectId>57739</ObjectId>
       <ColNames>user_subscriber</ColNames>
       <RefTableId>57701</RefTableId>
@@ -607,7 +625,7 @@
       <RefKeyName>user_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="97" parent="42" name="id">
+    <column id="100" parent="42" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -616,68 +634,74 @@
       <TypeId>23</TypeId>
       <SequenceName>user_id_seq</SequenceName>
     </column>
-    <column id="98" parent="42" name="name">
+    <column id="101" parent="42" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <StateNumber>885</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="99" parent="42" name="login">
+    <column id="102" parent="42" name="login">
       <Position>4</Position>
       <DataType>text|0s</DataType>
       <StateNumber>1018</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="100" parent="42" name="nickname">
+    <column id="103" parent="42" name="nickname">
       <Position>6</Position>
       <DataType>text|0s</DataType>
       <StateNumber>894</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="101" parent="42" name="age">
+    <column id="104" parent="42" name="age">
       <Position>7</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>900</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="102" parent="42" name="password">
+    <column id="105" parent="42" name="password">
       <Position>8</Position>
       <DataType>text|0s</DataType>
       <StateNumber>970</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="103" parent="42" name="user_pkey">
+    <column id="106" parent="42" name="picture">
+      <Position>9</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>1113</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <index id="107" parent="42" name="user_pkey">
       <ObjectId>57708</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="104" parent="42" name="user_nickname_key">
+    <index id="108" parent="42" name="user_nickname_key">
       <ObjectId>57817</ObjectId>
       <ColNames>nickname</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="105" parent="42" name="user_password_key">
+    <index id="109" parent="42" name="user_password_key">
       <ObjectId>65616</ObjectId>
       <ColNames>password</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="106" parent="42" name="user_pkey">
+    <key id="110" parent="42" name="user_pkey">
       <ObjectId>57709</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="107" parent="42" name="user_nickname_key">
+    <key id="111" parent="42" name="user_nickname_key">
       <ObjectId>57818</ObjectId>
       <ColNames>nickname</ColNames>
       <UnderlyingIndexName>user_nickname_key</UnderlyingIndexName>
     </key>
-    <key id="108" parent="42" name="user_password_key">
+    <key id="112" parent="42" name="user_password_key">
       <ObjectId>65617</ObjectId>
       <ColNames>password</ColNames>
       <UnderlyingIndexName>user_password_key</UnderlyingIndexName>
     </key>
-    <column id="109" parent="43" name="id">
+    <column id="113" parent="43" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -686,30 +710,30 @@
       <TypeId>23</TypeId>
       <SequenceName>watch_later_id_seq</SequenceName>
     </column>
-    <column id="110" parent="43" name="user_who_postponed">
+    <column id="114" parent="43" name="user_who_postponed">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>891</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="111" parent="43" name="postponed_film">
+    <column id="115" parent="43" name="postponed_film">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>891</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="112" parent="43" name="watch_later_pkey">
+    <index id="116" parent="43" name="watch_later_pkey">
       <ObjectId>57804</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="113" parent="43" name="watch_later_pkey">
+    <key id="117" parent="43" name="watch_later_pkey">
       <ObjectId>57805</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>watch_later_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="114" parent="43" name="watch_later_user_who_postponed_fkey">
+    <foreign-key id="118" parent="43" name="watch_later_user_who_postponed_fkey">
       <ObjectId>57806</ObjectId>
       <ColNames>user_who_postponed</ColNames>
       <RefTableId>57701</RefTableId>
@@ -718,7 +742,7 @@
       <RefKeyName>user_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="115" parent="43" name="watch_later_postponed_film_fkey">
+    <foreign-key id="119" parent="43" name="watch_later_postponed_film_fkey">
       <ObjectId>57811</ObjectId>
       <ColNames>postponed_film</ColNames>
       <RefTableId>57661</RefTableId>

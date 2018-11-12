@@ -14,13 +14,13 @@
         <div id="f1" class="filmsBlock">
             Films about icon
             <br>
-        <#list 0..films?size-1 as item>
+       <#-- <#list 0..films?size-1 as item>-->
         <div class="film_cell"><img src="/static/icon.jpg" width="125px"
-                                    height="125px"><br>${films[item].getName()}</div>
+                                    height="125px"><br>${item.getName()}</div>
         </#list>
         </div>
-        </#list>
-    <div id="f1" class="filmsBlock">
+        <#--</#list>-->
+    <#--<div id="f1" class="filmsBlock">
         Films about icon
         <br>
         <div class="film_cell"><img src="/static/icon.jpg" width="125px"
@@ -32,7 +32,7 @@
         <br>
         <div class="film_cell"><img src="/static/icon.jpg" width="125px"
                                     height="125px"><br>${films[item].getName()}</div>
-    </div>
+    </div>-->
     </#if>
 </#if>
 </div>

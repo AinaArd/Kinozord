@@ -7,29 +7,30 @@ public class User {
     private String nickname;
     private int age;
     private String password;
+    private String picturePath;
 
-    public User(String login, String name, String nickname, int age) {
-        this.login = login;
-        this.name = name;
-        this.nickname = nickname;
-        this.age = age;
+    public User(long id, String login, String password, String name, String picturePath) {
+        this(id,login,password,name);
+        this.picturePath = picturePath;
+    }
+
+    public User() {
+
     }
 
     public User(long id, String login, String password, String name) {
         this.id = id;
         this.login = login;
-        this.password = password;
         this.name = name;
+        this.password = password;
     }
 
-    public User(long id, String name, String login, String nickname, int age, String password) {
-        this(id, name, login, password);
-        this.nickname = nickname;
-        this.age = age;
+    public String getPicturePath() {
+        return picturePath;
     }
 
-    public User() {
-
+    public void setPicturePath(String picturePath) {
+        this.picturePath = picturePath;
     }
 
     public long getId() {

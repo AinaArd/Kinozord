@@ -1,6 +1,5 @@
 package servlets;
 
-import DAO.SimpleUserDAO;
 import entities.User;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -9,13 +8,12 @@ import helper.Helper;
 import services.UserService;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.HashMap;
 
+@MultipartConfig
 public class RegistrationServlet extends HttpServlet {
     private UserService userService = Helper.getUserService();
 
@@ -32,13 +30,46 @@ public class RegistrationServlet extends HttpServlet {
             String login = request.getParameter("login");
             String password = request.getParameter("password");
 
-            userService.registerNewUser(name, login, password);
-            session.setAttribute("current_user", currentUser);
-            response.sendRedirect("/login");
+//            if (Helper.validation(name, login, password)) {
 
+                String path = "C:\\Programming\\Kinozord\\web\\avatars\\";
+                Part filePart = request.getPart("file");
+                String fileName = Helper.getFileName(filePart);
+
+                OutputStream out = null;
+                InputStream filecontent = null;
+                final PrintWriter writer = response.getWriter();
+
+                try {
+                    out = new FileOutputStream(new File(path + File.separator + fileName));
+                    filecontent = filePart.getInputStream();
+
+                    int read = 0;
+                    final byte[] bytes = new byte[512];
+
+                    while ((read = filecontent.read(bytes)) != -1) {
+                        out.write(bytes, 0, read);
+                    }
+                } catch (FileNotFoundException fne) {
+                } finally {
+                    if (out != null) {
+                        out.close();
+                    }
+                    if (filecontent != null) {
+                        filecontent.close();
+                    }
+                    if (writer != null) {
+                        writer.close();
+                    }
+                }
+
+                userService.registerNewUser(name, login, password, path + fileName);
+                session.setAttribute("current_user", currentUser);
+                response.sendRedirect("/login");
+            }
         }
+//    }
 
-    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");

@@ -30,42 +30,72 @@ public class SimpleUserDAO implements UserDAO {
                 user.setPassword(rs.getString("password"));
                 user.setName(rs.getString("name"));
                 return user;*/
-                return new User(rs.getLong("id"),rs.getString("login"),rs.getString("password"),
-                        rs.getString("name"));
-               /* return new User(rs.getLong("id"),rs.getString("login"),
-                        rs.getString("password"),rs.getString("name"));*/
+                return new User(rs.getLong("id"), rs.getString("login"), rs.getString("password"),
+                        rs.getString("name"), rs.getString("picture"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
-       /* List<User> users = DataBase.getUsers();
-        for (User user : users) {
-            if (user.getLogin().equals(login)) {
-                return user;
-            }
-        }
-        return null;*/
 
 
     public boolean checkPass(User u, String password) {
         return u.getPassword().equals(password);
     }
 
-    public void registerNewUser(String userName, String userLogin, String userPassword) {
+    public void registerNewUser(String userName, String userLogin, String userPassword, String filePath) {
         try {
-            PreparedStatement pr = Helper.getConnection().prepareStatement("insert into \"user\" (\"name\",\"login\",\"password\") " +
-                    "values (?, ?, ?);");
+            PreparedStatement pr = Helper.getConnection().prepareStatement("insert into \"user\" (\"name\",\"login\",\"password\", \"picture\") " +
+                    "values (?, ?, ?, ?);");
             pr.setString(1, userName);
             pr.setString(2, userLogin);
             pr.setString(3, userPassword);
+            pr.setString(4,filePath);
             pr.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
+    public static User updateUserInDB(User user, String newName, String newLogin, String newPassword) {
+        try {
+            PreparedStatement st = Helper.getConnection().prepareStatement("update \"user\" set name=?" +
+                    "login=?" + "password=?" + /*Helper.encripting(newPassword)*/  "where login=?");
+            st.setString(1, newName);
+            st.setString(2, newLogin);
+            st.setString(3, newPassword);
+            st.setString(4, user.getLogin());
+            user.setName(newName);
+            user.setLogin(newLogin);
+            user.setPassword(newPassword);
+            return user;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static User findFilm(String name) {
+        try {
+            PreparedStatement ps = Helper.getConnection().prepareStatement("select * from \"user\" where name=?");
+            ps.setString(1, name);
+            ResultSet rs = ps.executeQuery();
+
+            if (!rs.next()) {
+                return null;
+            } else {
+                return new User(rs.getLong("id"), rs.getString("login"), rs.getString("password"),
+                        rs.getString("name"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
    /* public List<Post> getUserPosts(User user) {
         if (posts == null) {

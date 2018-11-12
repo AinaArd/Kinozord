@@ -6,10 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree" rel="stylesheet">
 </head>
 <body>
-<div class="navbar"><!--
-  <a href="#home">Home</a>
-  <a href="#news">News</a>
-   -->
+<div class="navbar">
     <div class="dropdown">
         <button class="dropbtn">KinoZord
             <i class="fa fa-caret-down"></i>

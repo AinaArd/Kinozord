@@ -5,8 +5,6 @@ import entities.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.sql.*;
-import java.util.List;
 
 import helper.Helper;
 
@@ -45,27 +43,21 @@ public class UserService {
         return null;
 */
 
+    public User userSearch(String name) {
+        return SimpleUserDAO.findFilm(name);
+    }
 
     public void authorize(User current_user, HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.setAttribute("current_user", current_user);
     }
 
-    public void registerNewUser(String name, String login, String password) {
+    public void registerNewUser(String name, String login, String password, String filePath) {
         password = Helper.encripting(password);
-        userDAO.registerNewUser(name, login, password);
+        userDAO.registerNewUser(name, login, password, filePath);
     }
 
-    public void updateUser(String oldLogin, String newName, String newLogin, String newPassword) {
-        try {
-            PreparedStatement st = Helper.getConnection().prepareStatement("update user set name=" + newName + "login=" + newLogin +
-                    "password=" + Helper.encripting(newPassword) +
-                    "where login=" + oldLogin);
-            st.setString(1, newName);
-            st.setString(2, newLogin);
-            st.setString(3, newPassword);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public User updateUser(User oldUser, String newName, String newLogin, String newPassword) {
+        return SimpleUserDAO.updateUserInDB(oldUser, newName, newLogin, newPassword);
     }
 }
