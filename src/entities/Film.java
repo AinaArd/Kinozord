@@ -68,4 +68,16 @@ public class Film {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Film{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", name='" + name + '\'' +
+                ", year=" + year +
+                ", country='" + country + '\'' +
+                ", rate=" + rate +
+                '}';
+    }
 }

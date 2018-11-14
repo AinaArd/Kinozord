@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
         } else {
             String login = request.getParameter("login");
             String pass = request.getParameter("password");
-            pass = Helper.encripting(pass);
+//            pass = Helper.encripting(pass);
 
             if (request.getParameter("Remember") != null) {
                 Cookie remembered = new Cookie(login, pass);

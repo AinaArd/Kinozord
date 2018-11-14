@@ -11,8 +11,8 @@
 <#include "header.ftl">
 <div class="mainBlock">
     <div class="left">
-        <form class="custom-dropdown" action="formdata" method="post" name="form1">
-            <input class="search" type="text" name="search" placeholder="FILMNAME">
+        <form class="custom-dropdown" <#--action="formdata"--> method="post" name="form1">
+            <input class="search" type="text" name="name" placeholder="FILMNAME">
             <p><select name="year">
                 <option name="searchCategory" value="Выберите из списка"></option>
                 <option name="1994">1994</option>
@@ -39,7 +39,7 @@
                 <option name="9">9</option>
                 <option name="10">10</option>
             </select></p>
-            <p><input class="Rec" type="submit"></p>
+            <p><input class="Rec" type="submit"/></p>
         </form>
 
     </div>

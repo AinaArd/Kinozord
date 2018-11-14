@@ -53,7 +53,7 @@ public class UserService {
     }
 
     public void registerNewUser(String name, String login, String password, String filePath) {
-        password = Helper.encripting(password);
+//        password = Helper.encripting(password);
         userDAO.registerNewUser(name, login, password, filePath);
     }
 

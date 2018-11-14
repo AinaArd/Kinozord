@@ -39,7 +39,7 @@ public class SimpleUserDAO {
             pr.setString(1, userName);
             pr.setString(2, userLogin);
             pr.setString(3, userPassword);
-            pr.setString(4,filePath);
+            pr.setString(4, filePath);
             pr.executeUpdate();
 
         } catch (SQLException e) {
@@ -55,7 +55,7 @@ public class SimpleUserDAO {
             st.setString(2, newLogin);
             st.setString(3, newPassword);
             st.setString(4, user.getLogin());
-            System.out.println(getUserByLogin(newLogin));
+            st.executeUpdate();
             return getUserByLogin(newLogin);
         } catch (SQLException e) {
             e.printStackTrace();

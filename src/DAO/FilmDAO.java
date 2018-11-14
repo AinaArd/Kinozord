@@ -27,14 +27,14 @@ public class FilmDAO {
     }
 
 
-    public static List<Film> findFilm(String name, String country, int year, int rate) {
+    public static List<Film> findFilms(String name, String country, String year, String rate) {
         try {
-            PreparedStatement ps = Helper.getConnection().prepareStatement("select * from \"film\" where name =? or (country=? and" +
-                    " year=? and rate=?)");
+            PreparedStatement ps = Helper.getConnection().prepareStatement("select * from \"film\" where name =? or country=? or" +
+                    " year=? or rate=?");
             ps.setString(1, name);
             ps.setString(2, country);
-            ps.setInt(3, year);
-            ps.setInt(4, rate);
+            ps.setString(3, year);
+            ps.setString(4, rate);
             ResultSet rs = ps.executeQuery();
             List<Film> foundFilms = new ArrayList<>();
 
