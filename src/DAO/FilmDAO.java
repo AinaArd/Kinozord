@@ -35,9 +35,8 @@ public class FilmDAO {
             ps.setString(2, country);
             ps.setString(3, year);
             ps.setString(4, rate);
-            ResultSet rs = ps.executeQuery();
             List<Film> foundFilms = new ArrayList<>();
-
+            ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 foundFilms.add(new Film(rs.getLong("id"), rs.getInt("year"), rs.getString("country"),
                         rs.getInt("rate"), rs.getString("description"), rs.getString("name")));

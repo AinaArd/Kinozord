@@ -26,17 +26,15 @@ public class SearchServlet extends HttpServlet {
 
         // TODO: check parameters, как выводить эти фильмы
 
-        /*String nameOfFilm = request.getParameter("name");
+        String nameOfFilm = request.getParameter("name");
         String country = request.getParameter("country");
         String year = request.getParameter("year");
         String rate = request.getParameter("rate");
 
         session.setAttribute("nameOfFilm", nameOfFilm);
-        System.out.println(nameOfFilm);
         session.setAttribute("country", country);
         session.setAttribute("year", year);
-        session.setAttribute("rate", rate);*/
-
+        session.setAttribute("rate", rate);
 
     }
 
@@ -56,22 +54,20 @@ public class SearchServlet extends HttpServlet {
 
 
         if ((nameOfFilm.equals("name")) || (country.equals("country")) || (year.equals("year")) || (rate.equals("rate"))) {
-            List<Film> foundFilms = new ArrayList<>();
-            root.put("films", foundFilms);
-        }
-        else{
-            nameOfFilm = request.getParameter("nameOfFilm");
-            country = request.getParameter("country");
-            year = request.getParameter("year");
-            rate = request.getParameter("rate");
+            nameOfFilm = (String) session.getAttribute("nameOfFilm");
+            country = (String) session.getAttribute("country");
+            year = (String) session.getAttribute("year");
+            rate = (String) session.getAttribute("rate");
+
             List<Film> foundFilms = FilmDAO.findFilms(nameOfFilm, country, year, rate);
             root.put("films", foundFilms);
-        }
 
-        try {
-            tmpl.process(root, response.getWriter());
-        } catch (TemplateException e) {
-            e.printStackTrace();
+
+            try {
+                tmpl.process(root, response.getWriter());
+            } catch (TemplateException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
