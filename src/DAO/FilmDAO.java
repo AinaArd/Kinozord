@@ -1,11 +1,13 @@
 package DAO;
 
+import entities.Category;
 import entities.Film;
 import entities.User;
 import helper.Helper;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FilmDAO {
@@ -38,10 +40,29 @@ public class FilmDAO {
             List<Film> foundFilms = new ArrayList<>();
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                foundFilms.add(new Film(rs.getLong("id"), rs.getInt("year"), rs.getString("country"),
-                        rs.getInt("rate"), rs.getString("description"), rs.getString("name")));
+                foundFilms.add(new Film(rs.getLong("id"), rs.getString("description"), rs.getString("name"),
+                        rs.getInt("year"), rs.getString("country"), rs.getInt("rate"), rs.getString("pic")));
             }
             return foundFilms;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static Film getFilmById(int id) {
+        try {
+            PreparedStatement ps = Helper.getConnection().prepareStatement("select * from category" +
+                    " inner join film f on category.id = f.category where f.id =?");
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            if (!rs.next()) {
+                return null;
+            } else {
+                return new Film(rs.getLong("id"), rs.getString("description"), rs.getString("name"),
+                        rs.getInt("year"), rs.getString("country"), rs.getInt("rate"), rs.getString("pic"),
+                        rs.getString("catname"));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

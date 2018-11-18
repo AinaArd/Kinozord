@@ -20,22 +20,21 @@ import java.util.HashMap;
 import java.util.List;
 
 public class SearchServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         HttpSession session = request.getSession();
-
-        // TODO: check parameters, как выводить эти фильмы
 
         String nameOfFilm = request.getParameter("name");
         String country = request.getParameter("country");
         String year = request.getParameter("year");
         String rate = request.getParameter("rate");
 
-        session.setAttribute("nameOfFilm", nameOfFilm);
+        session.setAttribute("name", nameOfFilm);
         session.setAttribute("country", country);
         session.setAttribute("year", year);
         session.setAttribute("rate", rate);
 
+        response.sendRedirect("/search");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -47,27 +46,29 @@ public class SearchServlet extends HttpServlet {
         HashMap<String, Object> root = new HashMap<>();
         root.put("form_url", request.getRequestURI());
 
-        String nameOfFilm = "name";
-        String country = "country";
-        String year = "year";
-        String rate = "rate";
+        String nameOfFilm = "";
+        String country = "";
+        String year = "";
+        String rate = "";
 
 
-        if ((nameOfFilm.equals("name")) || (country.equals("country")) || (year.equals("year")) || (rate.equals("rate"))) {
-            nameOfFilm = (String) session.getAttribute("nameOfFilm");
+        if ((nameOfFilm.equals("")) || (country.equals("")) || (year.equals("")) || (rate.equals(""))) {
+            List<Film> foundFilms = FilmDAO.getFilms();
+            root.put("films", foundFilms);
+
+            nameOfFilm = (String) session.getAttribute("name");
             country = (String) session.getAttribute("country");
             year = (String) session.getAttribute("year");
             rate = (String) session.getAttribute("rate");
 
-            List<Film> foundFilms = FilmDAO.findFilms(nameOfFilm, country, year, rate);
+            foundFilms = FilmDAO.findFilms(nameOfFilm, country, year, rate);
             root.put("films", foundFilms);
-
-
             try {
                 tmpl.process(root, response.getWriter());
             } catch (TemplateException e) {
                 e.printStackTrace();
             }
+
         }
     }
 }

@@ -28,7 +28,6 @@ public class ProfileServlet extends javax.servlet.http.HttpServlet {
         User newUser = SimpleUserDAO.updateUserInDB(current_user, newName, newLogin, newPassword);
 
         session.setAttribute("current_user", newUser);
-        System.out.println(newUser);
 
         response.sendRedirect("/profile");
     }

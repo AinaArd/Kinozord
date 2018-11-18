@@ -45,7 +45,7 @@
                             <#if subscribers? has_content>
                                 <#list subscribers as item>
                         <li id="list">
-                            <img src="src/icon.jpg" height="40px" width="40px">${item.getUserSubscriber()}
+                            <img src="/static/icon.jpg" height="40px" width="40px"><b>${item.getUserSubscriber()}
                         </li>
                                 </#list>
                             </#if>
@@ -60,7 +60,7 @@
                             <#if later? has_content>
                                 <#list later as item>
                         <li id="list">
-                            <img src="" height="40px" width="40px">${item.getPostponedFilm()}
+                            <img src="/static/icon.jpg" height="40px" width="40px"><b>${item.getPostponedFilm()}
                         </li>
                                 </#list>
                             </#if>
@@ -75,7 +75,7 @@
                            <#if liked? has_content>
                                <#list liked as item>
                         <li id="list">
-                            <img src="" height="40px" width="40px">${item.getLiked()}
+                            <img src="/static/icon.jpg" height="40px" width="40px"><b>${item.getLiked()}
                         </li>
                                </#list>
                            </#if>
@@ -90,7 +90,7 @@
                         <#if neutral? has_content>
                             <#list neutral as item>
                         <li id="list">
-                            <img src="" height="40px" width="40px">${item.getNeutralFilm()}
+                            <img src="/static/icon.jpg" height="40px" width="40px"><b>${item.getNeutralFilm()}
                         </li>
                             </#list>
                         </#if>
@@ -105,7 +105,7 @@
                              <#if disliked? has_content>
                                  <#list disliked as item>
                         <li id="list">
-                            <img src="" height="40px" width="40px">${item.getDislikedFilm()}
+                            <img src="/static/icon.jpg" height="40px" width="40px"><b>${item.getDislikedFilm()}
                         </li>
                                  </#list>
                              </#if>
@@ -122,7 +122,7 @@
         <div class="right">
             <li>
                 <div class="post">
-                    <img style="float: left;" src="src/icon.jpg" height="40px" width="40px">
+                    <img style="float: left;" src="${user.getPicturePath()}" height="40px" width="40px">
                     <p style="
 				margin-left: 20px;
 				float: left;">${user.getLogin()}</p>

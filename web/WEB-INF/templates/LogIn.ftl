@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Form</title>
-    <link rel="stylesheet" type="text/css" href="/static/AuthStyle.css">
+    <link rel="stylesheet" type="text/css" href="/static/AuthStyleLogin.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 

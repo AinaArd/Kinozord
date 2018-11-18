@@ -45,16 +45,16 @@
     </div>
     <div class="right">
         <br>
-        <br>
         <#if films ??>
             <#if films? has_content>
-                <#list films as item>
-        <div class="film_cell"><a href=""><img src="/static/icon.jpg" width="125px" height="125px"><br>${item.getName()}
-                </a>
+                <div id="f1" class="filmsBlock"><br>
+                <#list 0..films?size-1 as item>
+        <div class="film_cell"><a href="/films/${films[item].getId()}"><img src="/static/icon.jpg" width="125px"
+                                               height="125px"></a><br>${films[item].getName()}</div>
                 </#list>
+                </div>
             </#if>
         </#if>
-    </div>
     </div>
 </div>
 </body>

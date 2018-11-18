@@ -32,42 +32,32 @@ public class RegistrationServlet extends HttpServlet {
 
 //            if (Helper.validation(name, login, password)) {
 
-                String path = "C:\\Programming\\Kinozord\\web\\avatars";
-                Part filePart = request.getPart("file");
-                String fileName = Helper.getFileName(filePart);
+            String path = "C:\\Programming\\Kinozord\\web\\avatars";
+            Part filePart = request.getPart("file");
+            String fileName = Helper.getFileName(filePart);
 
-                OutputStream out = null;
-                InputStream filecontent = null;
-                final PrintWriter writer = response.getWriter();
+            OutputStream out = null;
+            InputStream filecontent = null;
 
-                try {
-                    out = new FileOutputStream(new File(path + File.separator + fileName));
-                    filecontent = filePart.getInputStream();
+            try {
+                out = new FileOutputStream(new File(path + File.separator + fileName));
+                filecontent = filePart.getInputStream();
 
-                    int read = 0;
-                    final byte[] bytes = new byte[512];
+                int read = 0;
+                final byte[] bytes = new byte[512];
 
-                    while ((read = filecontent.read(bytes)) != -1) {
-                        out.write(bytes, 0, read);
-                    }
-                } catch (FileNotFoundException fne) {
-                } finally {
-                    if (out != null) {
-                        out.close();
-                    }
-                    if (filecontent != null) {
-                        filecontent.close();
-                    }
-                    if (writer != null) {
-                        writer.close();
-                    }
+                while ((read = filecontent.read(bytes)) != -1) {
+                    out.write(bytes, 0, read);
                 }
-
-                userService.registerNewUser(name, login, password, "../avatars/" + fileName);
-                session.setAttribute("current_user", currentUser);
-//                response.sendRedirect("/login");
+            } catch (FileNotFoundException fne) {
+                fne.printStackTrace();
             }
+
+            userService.registerNewUser(name, login, password, "../avatars/" + fileName);
+            session.setAttribute("current_user", currentUser);
+            response.sendRedirect("/login");
         }
+    }
 //    }
 
 

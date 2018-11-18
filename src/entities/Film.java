@@ -7,18 +7,39 @@ public class Film {
     private int year;
     private String country;
     private int rate;
+    private String pic;
+    private String category;
+
+    public Film() {
+
+    }
+
+    public Film(long id, String description, String name, int year, String country, int rate, String pic) {
+        this.id = id;
+        this.description = description;
+        this.name = name;
+        this.year = year;
+        this.country = country;
+        this.rate = rate;
+        this.pic = pic;
+    }
+
+    public Film(long id, String description, String name, int year, String country, int rate, String pic, String category) {
+        this(id,description,name,year,country,rate,pic);
+        this.category = category;
+    }
 
     public Film(String description, String name) {
         this.description = description;
         this.name = name;
     }
 
-    public Film(long id, int year, String country, int rate, String description, String name) {
-        this(description, name);
-        this.id = id;
-        this.year = year;
-        this.country = country;
-        this.rate = rate;
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public long getId() {

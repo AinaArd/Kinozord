@@ -54,13 +54,13 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>NewPost</servlet-name>
-        <servlet-class>servlets.NewFilmServlet</servlet-class>
+        <servlet-name>OneFilm</servlet-name>
+        <servlet-class>servlets.OneFilmServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>NewPost</servlet-name>
-        <url-pattern>/newpost</url-pattern>
+        <servlet-name>OneFilm</servlet-name>
+        <url-pattern>/films/*</url-pattern>
     </servlet-mapping>
 
     <servlet>
