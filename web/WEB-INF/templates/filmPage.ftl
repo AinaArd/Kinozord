@@ -13,9 +13,9 @@
     <div class="form">
         <form method="post">
             <label for="user">Send to</label><br>
-            <input required id="user" type="text" name="login" placeholder="Login"/><br>
+            <input required id="user" type="text" name="receiver" placeholder="Login"/><br>
             <label for="comment">Comment<b id="t">0</b><b>/200</b></label><br>
-            <textarea id="comment" maxlength="200" oninput="func(this)" type="text" name="text"
+            <textarea id="comment" maxlength="200" oninput="func(this)" type="text" name="comment"
                       placeholder="Awesome Film Bro"></textarea>
             <button type="submit" class="btn btn-primary btn-block btn-large">RECOMMEND</button>
         </form>

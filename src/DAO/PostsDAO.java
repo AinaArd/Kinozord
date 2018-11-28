@@ -43,4 +43,19 @@ public class PostsDAO {
         return null;
     }
 
+    public static boolean createNewPost(String comment, String receiver) {
+        User publisher = SimpleUserDAO.getUserByLogin(receiver);
+        try {
+            PreparedStatement pr = Helper.getConnection().prepareStatement("insert into post (context, user_publisher, date)" +
+                    "values (?, ?, now());");
+            pr.setString(1,comment);
+            pr.setLong(2, publisher.getId());
+            pr.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }

@@ -13,8 +13,7 @@ public class UserService {
 
     public User getCurrentUser(HttpServletRequest request) {
         HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("current_user");
-        return user;
+        return (User) session.getAttribute("current_user");
     }
 
     public User authenticate(String login, String pass) {
@@ -43,10 +42,6 @@ public class UserService {
         return null;
 */
 
-    public User userSearch(String name) {
-        return SimpleUserDAO.findFilm(name);
-    }
-
     public void authorize(User current_user, HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.setAttribute("current_user", current_user);
@@ -59,5 +54,11 @@ public class UserService {
 
     public User updateUser(User oldUser, String newName, String newLogin, String newPassword) {
         return SimpleUserDAO.updateUserInDB(oldUser, newName, newLogin, newPassword);
+    }
+
+    public boolean guestMode(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("current_user");
+        return user != null;
     }
 }

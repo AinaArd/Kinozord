@@ -24,7 +24,6 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         response.setContentType("text/html");
 
-
         if (userService.getCurrentUser(request) != null) {
             response.sendRedirect("/profile");
 
@@ -41,7 +40,7 @@ public class LoginServlet extends HttpServlet {
             User current_user = userService.authenticate(login, pass);
             if (current_user != null) {
                 userService.authorize(current_user, request);
-                response.sendRedirect("/profile");
+                response.sendRedirect("/profile/" + current_user.getId());
             } else
                 response.sendRedirect("/login");
         }

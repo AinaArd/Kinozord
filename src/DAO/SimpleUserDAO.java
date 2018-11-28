@@ -3,6 +3,7 @@ package DAO;
 import entities.User;
 import helper.Helper;
 
+import javax.servlet.http.HttpServletRequest;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,6 +27,25 @@ public class SimpleUserDAO {
         }
         return null;
     }
+
+    public static User getUserByName(String name) {
+        try {
+            PreparedStatement pr = Helper.getConnection().prepareStatement("select * from \"user\" where name=?");
+            pr.setString(1, name);
+            ResultSet rs = pr.executeQuery();
+
+            if (!rs.next()) {
+                return null;
+            } else {
+                return new User(rs.getLong("id"), rs.getString("login"), rs.getString("password"),
+                        rs.getString("name"), rs.getString("picture"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
 
     public boolean checkPass(User u, String password) {
@@ -63,7 +83,16 @@ public class SimpleUserDAO {
         return null;
     }
 
-    public static User findFilm(String name) {
+    public static User findUser(HttpServletRequest request) {
+        if (request.getParameter("search") != null) {
+            String searchedUserName = request.getParameter("search");
+            User foundUser = SimpleUserDAO.getUserByName(searchedUserName);
+            return foundUser;
+        }
+        return null;
+    }
+
+    /*public static User findFilm(String name) {
         try {
             PreparedStatement ps = Helper.getConnection().prepareStatement("select * from \"user\" where name=?");
             ps.setString(1, name);
@@ -81,7 +110,7 @@ public class SimpleUserDAO {
         }
         return null;
     }
-
+*/
 
    /* public List<Post> getUserPosts(User user) {
         if (posts == null) {

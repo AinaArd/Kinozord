@@ -18,26 +18,58 @@ import java.util.List;
 
 public class ProfileServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+        response.setContentType("text/html");
+
         request.getParameter("realName");
         HttpSession session = request.getSession();
         User current_user = (User) session.getAttribute("current_user");
 
-        String newName = request.getParameter("newName");
-        String newLogin = request.getParameter("newLogin");
-        String newPassword = request.getParameter("newPassword");
-        User newUser = SimpleUserDAO.updateUserInDB(current_user, newName, newLogin, newPassword);
+        if (Helper.getUserService().guestMode(request)) {
 
-        session.setAttribute("current_user", newUser);
+            String s = request.getPathInfo();
+            System.out.println(s);
+//        if (s.equals("")) {
+            String newName = request.getParameter("newName");
+            String newLogin = request.getParameter("newLogin");
+            String newPassword = request.getParameter("newPassword");
+            User newUser = SimpleUserDAO.updateUserInDB(current_user, newName, newLogin, newPassword);
 
-        response.sendRedirect("/profile");
+            session.setAttribute("current_user", newUser);
+
+//        response.sendRedirect("/profile");
+//        }
+            if (SimpleUserDAO.findUser(request) != null) {
+                User foundUser = SimpleUserDAO.findUser(request);
+                System.out.println(foundUser);
+
+                session.setAttribute("another_user", foundUser);
+                response.sendRedirect("/profile/" + foundUser.getId());
+            } else {
+                System.out.println("You are just a guest!");
+                response.sendRedirect("/welcome");
+            }
+        }
     }
+
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         response.setContentType("text/html");
         Helper.remembered(request, response, request.getSession());
         HttpSession session = request.getSession();
         User loggedUser = (User) session.getAttribute("current_user");
+        User foundUser = (User) session.getAttribute("another_user");
 
+        if (foundUser != null) {
+            Configuration cfg = ConfigSingleton.getConfig(getServletContext());
+            Template tmpl = cfg.getTemplate("profile.ftl");
+            HashMap<String, Object> root = new HashMap<>();
+            root.put("user", foundUser);
+            try {
+                tmpl.process(root, response.getWriter());
+            } catch (TemplateException e) {
+                e.printStackTrace();
+            }
+        }
         if (loggedUser != null) {
             Configuration cfg = ConfigSingleton.getConfig(getServletContext());
             Template tmpl = cfg.getTemplate("profile.ftl");
