@@ -108,7 +108,7 @@
     <session id="1048757639">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="25" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.101" value="1" />
           <entry key="project.open.time.11" value="3" />
@@ -117,8 +117,8 @@
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.21" value="3" />
+          <entry key="project.open.time.22" value="2" />
           <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.28" value="1" />
@@ -137,7 +137,7 @@
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
           <entry key="project.open.time.99" value="1" />
-          <entry key="project.opened" value="34" />
+          <entry key="project.opened" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -146,19 +146,21 @@
           <entry key="category_to_films" value="2" />
           <entry key="class" value="10" />
           <entry key="css" value="68" />
-          <entry key="disliked" value="1" />
-          <entry key="film" value="13" />
-          <entry key="ftl" value="105" />
+          <entry key="disliked" value="2" />
+          <entry key="film" value="14" />
+          <entry key="ftl" value="106" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="174" />
-          <entry key="java" value="291" />
+          <entry key="java" value="303" />
           <entry key="jpg" value="8" />
           <entry key="jsp" value="4" />
           <entry key="liked" value="4" />
+          <entry key="neutral" value="1" />
           <entry key="post" value="6" />
-          <entry key="sql" value="30" />
+          <entry key="sql" value="37" />
           <entry key="ts" value="1" />
-          <entry key="user" value="25" />
+          <entry key="user" value="28" />
+          <entry key="watch_later" value="2" />
           <entry key="xml" value="28" />
         </counts>
       </usages-collector>
@@ -166,42 +168,42 @@
         <counts>
           <entry key="CLASS" value="10" />
           <entry key="CSS" value="68" />
-          <entry key="Database Element" value="55" />
-          <entry key="FTL" value="105" />
+          <entry key="Database Element" value="63" />
+          <entry key="FTL" value="106" />
           <entry key="HTML" value="174" />
           <entry key="Image" value="8" />
-          <entry key="JAVA" value="291" />
+          <entry key="JAVA" value="303" />
           <entry key="JSP" value="4" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SQL" value="1" />
-          <entry key="Scratch" value="29" />
+          <entry key="Scratch" value="36" />
           <entry key="TypeScript" value="1" />
           <entry key="XML" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cell" value="427" />
+          <entry key="cell" value="598" />
           <entry key="css" value="202" />
           <entry key="dummy" value="42" />
-          <entry key="ftl" value="2707" />
+          <entry key="ftl" value="2747" />
           <entry key="html" value="668" />
-          <entry key="java" value="21964" />
+          <entry key="java" value="22985" />
           <entry key="jsp" value="23" />
-          <entry key="sql" value="1466" />
+          <entry key="sql" value="1522" />
           <entry key="xml" value="504" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="202" />
-          <entry key="FTL" value="2707" />
+          <entry key="FTL" value="2747" />
           <entry key="HTML" value="668" />
-          <entry key="JAVA" value="21956" />
+          <entry key="JAVA" value="22977" />
           <entry key="JSP" value="23" />
           <entry key="PLAIN_TEXT" value="42" />
           <entry key="SQL" value="8" />
-          <entry key="Scratch" value="1893" />
+          <entry key="Scratch" value="2120" />
           <entry key="XML" value="504" />
         </counts>
       </usages-collector>
@@ -218,10 +220,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlets/LoginServlet.java">
+        <entry file="file://$PROJECT_DIR$/src/servlets/OneFilmServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="42" column="72" selection-start-line="42" selection-start-column="72" selection-end-line="42" selection-end-column="72" />
+            <state relative-caret-position="221">
+              <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -229,8 +231,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlets/ProfileServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
+            <state relative-caret-position="1275">
+              <caret line="89" column="9" selection-start-line="87" selection-start-column="8" selection-end-line="89" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/servlets/ConfigSingleton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -238,35 +249,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DAO/SimpleUserDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlets/OneFilmServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://6c47265b-e147-4ef1-8af3-495d82c5f03d/database/post/schema/public/table/post">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DAO/PostsDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+            <state relative-caret-position="391">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -276,6 +263,33 @@
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DAO/FilmDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1360">
+              <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DAO/CategoryDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DAO/PostsDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -322,7 +336,6 @@
         <option value="$PROJECT_DIR$/src/data/DataBase.java" />
         <option value="$PROJECT_DIR$/web/static/style.css" />
         <option value="$PROJECT_DIR$/src/services/PostService.java" />
-        <option value="$PROJECT_DIR$/src/entities/Liked.java" />
         <option value="$PROJECT_DIR$/src/entities/Post.java" />
         <option value="$PROJECT_DIR$/src/DAO/LikedDAO.java" />
         <option value="$PROJECT_DIR$/src/entities/Neutral.java" />
@@ -331,7 +344,6 @@
         <option value="$PROJECT_DIR$/src/services/LikedService.java" />
         <option value="$PROJECT_DIR$/src/services/CategoryService.java" />
         <option value="$PROJECT_DIR$/src/entities/Subscription.java" />
-        <option value="$PROJECT_DIR$/src/DAO/CategoryDAO.java" />
         <option value="$PROJECT_DIR$/src/helper/Helper.java" />
         <option value="$PROJECT_DIR$/src/servlets/SubscriptionServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/templates/register.ftl" />
@@ -342,7 +354,6 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/templates/filmPage.html" />
         <option value="$PROJECT_DIR$/web/static/search.css" />
         <option value="$PROJECT_DIR$/src/servlets/NewFilmServlet.java" />
-        <option value="$PROJECT_DIR$/src/servlets/SearchServlet.java" />
         <option value="$PROJECT_DIR$/src/servlets/RegistrationServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/templates/LogIn.ftl" />
         <option value="$PROJECT_DIR$/web/static/AuthStyleLogin.ts" />
@@ -353,19 +364,22 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/templates/search.ftl" />
         <option value="$PROJECT_DIR$/src/entities/Category.java" />
         <option value="$PROJECT_DIR$/src/entities/Film.java" />
-        <option value="$PROJECT_DIR$/src/DAO/FilmDAO.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/templates/header.ftl" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/servlets/LoginServlet.java" />
         <option value="$PROJECT_DIR$/src/services/UserService.java" />
         <option value="$PROJECT_DIR$/src/servlets/EnterServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/templates/welcome.html" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/templates/filmPage.ftl" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6c47265b-e147-4ef1-8af3-495d82c5f03d/console.sql" />
-        <option value="$PROJECT_DIR$/src/DAO/PostsDAO.java" />
-        <option value="$PROJECT_DIR$/src/servlets/OneFilmServlet.java" />
-        <option value="$PROJECT_DIR$/src/servlets/ProfileServlet.java" />
         <option value="$PROJECT_DIR$/src/DAO/SimpleUserDAO.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6c47265b-e147-4ef1-8af3-495d82c5f03d/console.sql" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/templates/filmPage.ftl" />
+        <option value="$PROJECT_DIR$/src/entities/Liked.java" />
+        <option value="$PROJECT_DIR$/src/DAO/FilmDAO.java" />
+        <option value="$PROJECT_DIR$/src/DAO/CategoryDAO.java" />
+        <option value="$PROJECT_DIR$/src/servlets/SearchServlet.java" />
+        <option value="$PROJECT_DIR$/src/servlets/OneFilmServlet.java" />
+        <option value="$PROJECT_DIR$/src/DAO/PostsDAO.java" />
+        <option value="$PROJECT_DIR$/src/servlets/ProfileServlet.java" />
       </list>
     </option>
   </component>
@@ -383,8 +397,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="926" />
-    <option name="width" value="994" />
+    <option name="x" value="925" />
+    <option name="width" value="995" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -395,7 +409,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -439,6 +452,13 @@
             </path>
             <path>
               <item name="Kinozord" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kinozord" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kinozord" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
@@ -447,6 +467,7 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -615,12 +636,15 @@
       <workItem from="1543418335608" duration="53000" />
       <workItem from="1543419456638" duration="1249000" />
       <workItem from="1543421285590" duration="172000" />
-      <workItem from="1543422127927" duration="5241000" />
+      <workItem from="1543422127927" duration="14957000" />
+      <workItem from="1543594207693" duration="2625000" />
+      <workItem from="1543608504276" duration="121000" />
+      <workItem from="1543677655225" duration="40000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306331000" />
+    <option name="totallyTimeSpent" value="318833000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -635,7 +659,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4957507" visible="true" weight="0.15771812" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4957507" visible="true" weight="0.14362416" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -648,7 +672,7 @@
       <window_info anchor="bottom" id="Debug" order="2" weight="0.37677053" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.4966443" visible="true" weight="0.38526914" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.4966443" weight="0.43909347" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
@@ -657,7 +681,7 @@
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.45750707" />
-      <window_info anchor="bottom" id="Database Console" order="14" sideWeight="0.4986577" weight="0.21671388" />
+      <window_info anchor="bottom" id="Database Console" order="14" sideWeight="0.4986577" weight="0.12889518" />
       <window_info anchor="bottom" id="TypeScript" order="15" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -667,7 +691,7 @@
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info active="true" anchor="right" id="Database" order="8" visible="true" weight="0.12416107" />
+      <window_info anchor="right" id="Database" order="8" weight="0.25100672" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4957507" visible="true" weight="0.152349" />
@@ -723,22 +747,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/entities/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/UserDAO.java" />
-    <entry file="das://6c47265b-e147-4ef1-8af3-495d82c5f03d/database/post/schema/public/table/disliked" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/templates/filmPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="17" selection-end-line="85" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/static/search.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -855,24 +863,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/CategoryDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="87" column="102" selection-start-line="86" selection-start-column="76" selection-end-line="87" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/templates/header.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="30" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/FilmDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -904,13 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://6c47265b-e147-4ef1-8af3-495d82c5f03d/database/post/schema/public/table/film">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
@@ -932,31 +919,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/templates/filmPage.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="97" selection-start-line="17" selection-start-column="97" selection-end-line="17" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/Post.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/SearchServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="42" column="72" selection-start-line="42" selection-start-column="72" selection-end-line="42" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -967,17 +933,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6c47265b-e147-4ef1-8af3-495d82c5f03d/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="147" column="69" selection-start-line="147" selection-end-line="147" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/EnterServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="42" column="72" selection-start-line="42" selection-start-column="72" selection-end-line="42" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -988,31 +954,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/PostsDAO.java">
+    <entry file="das://6c47265b-e147-4ef1-8af3-495d82c5f03d/database/post/schema/public/table/film">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="rate" languageId="SQL" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Disliked.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://6c47265b-e147-4ef1-8af3-495d82c5f03d/database/post/schema/public/table/disliked">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://6c47265b-e147-4ef1-8af3-495d82c5f03d/database/post/schema/public/table/neutral">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://6c47265b-e147-4ef1-8af3-495d82c5f03d/database/post/schema/public/table/watch_later">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6c47265b-e147-4ef1-8af3-495d82c5f03d/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="123" selection-start-line="123" selection-end-line="125" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/SearchServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="61" column="53" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/templates/filmPage.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="49" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Liked.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/OneFilmServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+        <state relative-caret-position="221">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/ProfileServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
+        <state relative-caret-position="1275">
+          <caret line="89" column="9" selection-start-line="87" selection-start-column="8" selection-end-line="89" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ConfigSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DAO/SimpleUserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        <state relative-caret-position="391">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAO/FilmDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAO/CategoryDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAO/PostsDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
         </state>
       </provider>
     </entry>

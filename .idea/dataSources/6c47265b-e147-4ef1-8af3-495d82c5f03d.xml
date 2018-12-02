@@ -85,8 +85,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2018-11-18.20:25:08.366</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1246</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-11-28.22:39:28.959</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1289</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -412,7 +412,7 @@
     <column id="69" parent="38" name="rate">
       <Position>6</Position>
       <DataType>text|0s</DataType>
-      <StateNumber>1162</StateNumber>
+      <StateNumber>1289</StateNumber>
       <TypeId>25</TypeId>
     </column>
     <column id="70" parent="38" name="pic">

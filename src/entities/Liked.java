@@ -7,10 +7,14 @@ public class Liked {
     private int rate;
 
     public Liked(long id, String whoLikes, String likedFilm, int rate) {
+        this(id,whoLikes,likedFilm);
+        this.rate = rate;
+    }
+
+    public Liked(long id, String whoLikes, String likedFilm) {
         this.id = id;
         this.whoLikes = whoLikes;
         this.likedFilm = likedFilm;
-        this.rate = rate;
     }
 
     public Liked(long id, String likedFilm) {

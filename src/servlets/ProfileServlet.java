@@ -41,12 +41,10 @@ public class ProfileServlet extends javax.servlet.http.HttpServlet {
             if (SimpleUserDAO.findUser(request) != null) {
                 User foundUser = SimpleUserDAO.findUser(request);
                 System.out.println(foundUser);
-
-                session.setAttribute("another_user", foundUser);
                 response.sendRedirect("/profile/" + foundUser.getId());
-            } else {
-                System.out.println("You are just a guest!");
-                response.sendRedirect("/welcome");
+
+                /*session.setAttribute("another_user", foundUser);
+                response.sendRedirect("/profile/" + foundUser.getId());*/
             }
         }
     }
@@ -57,19 +55,7 @@ public class ProfileServlet extends javax.servlet.http.HttpServlet {
         Helper.remembered(request, response, request.getSession());
         HttpSession session = request.getSession();
         User loggedUser = (User) session.getAttribute("current_user");
-        User foundUser = (User) session.getAttribute("another_user");
 
-        if (foundUser != null) {
-            Configuration cfg = ConfigSingleton.getConfig(getServletContext());
-            Template tmpl = cfg.getTemplate("profile.ftl");
-            HashMap<String, Object> root = new HashMap<>();
-            root.put("user", foundUser);
-            try {
-                tmpl.process(root, response.getWriter());
-            } catch (TemplateException e) {
-                e.printStackTrace();
-            }
-        }
         if (loggedUser != null) {
             Configuration cfg = ConfigSingleton.getConfig(getServletContext());
             Template tmpl = cfg.getTemplate("profile.ftl");

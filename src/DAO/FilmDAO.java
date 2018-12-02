@@ -1,10 +1,9 @@
 package DAO;
 
-import entities.Category;
-import entities.Film;
-import entities.User;
+import entities.*;
 import helper.Helper;
 
+import javax.servlet.http.HttpServletRequest;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,4 +67,25 @@ public class FilmDAO {
         }
         return null;
     }
+
+    public static void addIntoLiked(User user, Film film) {
+        CategoryDAO.getLikedFilms(user).add(new Liked(film.getId(), user.getName(),film.getName()));
+        System.out.println("liked");
+    }
+
+    public static void addIntoDisLiked(User user, Film film) {
+        CategoryDAO.getDislikedFilms(user).add(new Disliked(film.getId(), user.getName(),film.getName()));
+        System.out.println("disliked");
+    }
+
+    public static void addIntoNeutral(User user, Film film) {
+        CategoryDAO.getNeutralFilms(user).add(new Neutral(film.getId(), user.getName(),film.getName()));
+        System.out.println("neutral");
+    }
+
+    public static void addIntoWatchLater(User user, Film film) {
+        CategoryDAO.getWatchLateFilms(user).add(new WatchLater(film.getId(), user.getName(),film.getName()));
+        System.out.println("later");
+    }
 }
+

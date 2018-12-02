@@ -21,7 +21,60 @@ public class CategoryDAO {
                 liked.add(new Liked(rs.getLong("id"),rs.getString("user_who_liked"),
                         rs.getString("liked_film"), rs.getInt("rate")));
             }
+            System.out.println("liked films");
             return liked;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println("liked null");
+        return null;
+    }
+
+    public static List<Disliked> getDislikedFilms(User user) {
+        try {
+            PreparedStatement ps = Helper.getConnection().prepareStatement("select * from disliked where user_who_disliked=?");
+            ps.setLong(1,user.getId());
+            ResultSet rs = ps.executeQuery();
+            List<Disliked> disLiked = new ArrayList<>();
+            while(rs.next()) {
+                disLiked.add(new Disliked(rs.getLong("id"),rs.getString("user_who_disliked"),
+                        rs.getString("disliked_film")));
+            }
+            return disLiked;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static List<Neutral> getNeutralFilms(User user) {
+        try {
+            PreparedStatement ps = Helper.getConnection().prepareStatement("select * from neutral where user_neutral=?");
+            ps.setLong(1,user.getId());
+            ResultSet rs = ps.executeQuery();
+            List<Neutral> neutrals = new ArrayList<>();
+            while(rs.next()) {
+                neutrals.add(new Neutral(rs.getLong("id"),rs.getString("user_neutral"),
+                        rs.getString("neutral_film")));
+            }
+            return neutrals;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static List<WatchLater> getWatchLateFilms(User user) {
+        try {
+            PreparedStatement ps = Helper.getConnection().prepareStatement("select * from watch_later where user_who_postponed=?");
+            ps.setLong(1,user.getId());
+            ResultSet rs = ps.executeQuery();
+            List<WatchLater> watchLaters = new ArrayList<>();
+            while(rs.next()) {
+                watchLaters.add(new WatchLater(rs.getLong("id"),rs.getString("user_who_postponed"),
+                        rs.getString("postponed_film")));
+            }
+            return watchLaters;
         } catch (SQLException e) {
             e.printStackTrace();
         }

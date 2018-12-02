@@ -29,6 +29,7 @@ public class OneFilmServlet extends HttpServlet {
         String comment = request.getParameter("comment");
 
         User receiver = SimpleUserDAO.getUserByLogin(receiverName);
+        System.out.println(receiver);
 
         if (PostsDAO.createNewPost(comment, receiverName)) {
             response.sendRedirect("/profile/" + receiver.getId());
@@ -42,21 +43,21 @@ public class OneFilmServlet extends HttpServlet {
         response.setContentType("text/html");
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("current_user");
-
-        if (request.getParameter("watchlater") != null) {
-            //TODO: добавить в список watch later у текущего юзера
-        } else if (request.getParameter("like") != null) {
-
-        } else if (request.getParameter("neutral") != null) {
-
-        } else if (request.getParameter("dislike") != null) {
-
-        }
-
         String s = request.getPathInfo().substring(1);
         int digit = Integer.parseInt(s);
         Film film = FilmDAO.getFilmById(digit);
         System.out.println(film);
+
+
+        if (request.getParameter("watchlater") != null) {
+            FilmDAO.addIntoWatchLater(user, film);
+        } else if (request.getParameter("like") != null) {
+            FilmDAO.addIntoLiked(user, film);
+        } else if (request.getParameter("neutral") != null) {
+            FilmDAO.addIntoNeutral(user, film);
+        } else if (request.getParameter("dislike") != null) {
+            FilmDAO.addIntoDisLiked(user, film);
+        }
 
         Configuration cfg = ConfigSingleton.getConfig(getServletContext());
         Template tmpl = cfg.getTemplate("filmPage.ftl");

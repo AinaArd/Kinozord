@@ -48,7 +48,7 @@
     </div>
     <div class="Rate">
         <form method="post">
-            <b>How do you rate this film?</b><br>
+            <b>How do you find this film?</b><br>
             <span class="type"><input name="watchlater" type="radio">Watch Later<br></span>
             <span class="type"><input name="like" type="radio">Like<br></span>
             <span class="type"><input name="neutral" type="radio">Neutral<br></span>

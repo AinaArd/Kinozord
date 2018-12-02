@@ -53,22 +53,22 @@ public class SearchServlet extends HttpServlet {
 
 
         if ((nameOfFilm.equals("")) || (country.equals("")) || (year.equals("")) || (rate.equals(""))) {
-            List<Film> foundFilms = FilmDAO.getFilms();
-            root.put("films", foundFilms);
+        List<Film> foundFilms = FilmDAO.getFilms();
+        root.put("films", foundFilms);
 
-            nameOfFilm = (String) session.getAttribute("name");
-            country = (String) session.getAttribute("country");
-            year = (String) session.getAttribute("year");
-            rate = (String) session.getAttribute("rate");
+        nameOfFilm = (String) session.getAttribute("name");
+        country = (String) session.getAttribute("country");
+        year = (String) session.getAttribute("year");
+        rate = (String) session.getAttribute("rate");
 
-            foundFilms = FilmDAO.findFilms(nameOfFilm, country, year, rate);
-            root.put("films", foundFilms);
-            try {
-                tmpl.process(root, response.getWriter());
-            } catch (TemplateException e) {
-                e.printStackTrace();
-            }
-
+        foundFilms = FilmDAO.findFilms(nameOfFilm, country, year, rate);
+        root.put("films", foundFilms);
+        try {
+            tmpl.process(root, response.getWriter());
+        } catch (TemplateException e) {
+            e.printStackTrace();
         }
+
     }
+}
 }
